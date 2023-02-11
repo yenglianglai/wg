@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  gap: 30px;
+
+  h2 {
+    // width: 8vw;
+    font-size: 1.8vw;
+    font-weight: 400;
+    cursor: pointer;
+    color: #666666;
+    // border: red solid 2px;
+
+    transition: all 0.3s;
+
+    &:hover {
+      color: #3764ea;
+    }
+  }
+}

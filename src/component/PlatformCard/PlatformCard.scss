@@ -1,0 +1,23 @@
+.platformCard {
+  padding: 8px 3px;
+  height: 75px;
+  width: 15.5%;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  // border: red solid 2px;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+  //   border: red solid 2px;
+
+  img {
+    border-radius: 10px;
+    border: black solid 0.1px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    cursor: pointer;
+  }
+}

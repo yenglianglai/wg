@@ -1,0 +1,15 @@
+.container {
+  //   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+
+  flex-wrap: wrap;
+  width: 100%;
+
+  &:last-child {
+    justify-content: flex-start;
+  }
+  //   border: red solid 2px;
+}

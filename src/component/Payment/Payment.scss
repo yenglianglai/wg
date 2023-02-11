@@ -1,0 +1,13 @@
+.payment {
+  width: 100%;
+  //   border: red solid 2px;
+  padding: 20px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 80%;
+    // border: red solid 2px;
+    object-fit: cover;
+  }
+}

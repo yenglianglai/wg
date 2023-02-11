@@ -1,0 +1,143 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 70px;
+  width: 100vw;
+  position: sticky;
+  background-color: white;
+  top: 0px;
+  z-index: 1;
+
+  // border: red solid 2px;
+
+  .top {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // border: red solid 2px;
+    position: sticky;
+
+    .left {
+      height: 100%;
+      margin-left: 20px;
+      margin-top: 10px;
+      img {
+        width: 21vw;
+        object-fit: cover;
+      }
+    }
+
+    .mid {
+      display: flex;
+      height: 100%;
+      margin-left: 20px;
+
+      .item {
+        height: 100%;
+        width: auto;
+        padding: 0px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          color: #0d65ea;
+        }
+
+        p {
+          font-size: 14px;
+
+          margin: 0 10px;
+        }
+      }
+    }
+
+    .right {
+      margin-right: 30px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      gap: 2vw;
+      button {
+        height: 60%;
+        background-color: white;
+        border: #e5e5e5 solid 0.5px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        cursor: pointer;
+
+        p {
+          padding: 0;
+          margin: 0;
+          font-size: 1.1vw;
+        }
+
+        img {
+          width: 25px;
+        }
+      }
+
+      .toggle {
+        visibility: hidden;
+        position: absolute;
+        bottom: -150px;
+        width: 120%;
+        height: 130px;
+        background-color: #ffff;
+        border-radius: 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 0;
+        // border: #0d65ea solid 2px;
+
+        .language {
+          display: flex;
+          align-items: center;
+          // justify-content: center;
+          width: calc(100% - 10px);
+          height: 40px;
+          cursor: pointer;
+          gap: 10px;
+          padding: 10px 0 10px 10px;
+          // border: red solid 2px;
+
+          &:hover {
+            color: #0d65ea;
+            background-color: rgb(165, 206, 250);
+          }
+
+          p {
+            padding: 0;
+            margin: 0;
+            font-size: 1.1vw;
+          }
+
+          img {
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+
+      .toggleNav {
+        display: none;
+
+        img {
+          width: 4vw;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
