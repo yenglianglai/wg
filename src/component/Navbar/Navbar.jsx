@@ -97,7 +97,18 @@ const Navbar = () => {
             onClick={() => setToggle(!toggle)}
             style={device === "desktop" ? {} : { width: "30vw" }}
           >
-            <img src="/img/chinese.gif" alt="" />
+            <img
+              src="/img/chinese.gif"
+              alt=""
+              style={
+                device === "desktop"
+                  ? {}
+                  : {
+                      width: "5vw",
+                      height: "5vw",
+                    }
+              }
+            />
             <p
               style={
                 device === "desktop"
@@ -123,19 +134,92 @@ const Navbar = () => {
           <div
             className="toggle"
             id="toggle"
-            style={toggle ? { visibility: "visible" } : {}}
+            style={
+              toggle
+                ? device === "desktop"
+                  ? { visibility: "visible" }
+                  : {
+                      bottom: "calc(-20vw - 10px)",
+                      height: "20vw",
+                      visibility: "visible",
+                    }
+                : {}
+            }
           >
             <div className="language">
-              <img src="/img/chinese.gif" alt="" />
-              <p>简体中文</p>
+              <img
+                src="/img/chinese.gif"
+                alt=""
+                style={
+                  device === "desktop"
+                    ? {}
+                    : {
+                        width: "5vw",
+                        height: "5vw",
+                      }
+                }
+              />
+              <p
+                style={
+                  device === "desktop"
+                    ? {}
+                    : {
+                        fontSize: "2.4vw",
+                      }
+                }
+              >
+                简体中文
+              </p>
             </div>
             <div className="language">
-              <img src="/img/chinese.gif" alt="" />
-              <p>繁体中文</p>
+              <img
+                src="/img/chinese.gif"
+                alt=""
+                style={
+                  device === "desktop"
+                    ? {}
+                    : {
+                        width: "5vw",
+                        height: "5vw",
+                      }
+                }
+              />
+              <p
+                style={
+                  device === "desktop"
+                    ? {}
+                    : {
+                        fontSize: "2.5vw",
+                      }
+                }
+              >
+                繁体中文
+              </p>
             </div>
             <div className="language">
-              <img src="/img/english.gif" alt="" />
-              <p>English</p>
+              <img
+                src="/img/english.gif"
+                alt=""
+                style={
+                  device === "desktop"
+                    ? {}
+                    : {
+                        width: "5vw",
+                        height: "5vw",
+                      }
+                }
+              />
+              <p
+                style={
+                  device === "desktop"
+                    ? {}
+                    : {
+                        fontSize: "2.5vw",
+                      }
+                }
+              >
+                English
+              </p>
             </div>
           </div>
 
