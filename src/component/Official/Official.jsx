@@ -128,8 +128,8 @@ const Official = () => {
                 <img src="/img/qr1.gif" alt="" />
               </div>
               <div className="add">
-                <p style={{ fontSize: "3vw" }}>Trc20地址：</p>
-                <p style={{ fontSize: "3vw" }}>複製</p>
+                <p style={{ fontSize: "2.5vw" }}>Trc20地址：</p>
+                <p style={{ fontSize: "2.5vw" }}>複製</p>
               </div>
               <p className="address" style={{ fontSize: "3vw" }}>
                 TNraQpXKQxaxJtr5DJ4LwsWVDePpi4GUUK
