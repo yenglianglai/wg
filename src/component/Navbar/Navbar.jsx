@@ -50,7 +50,11 @@ const Navbar = () => {
           <img
             src="/img/LOGO.jpg"
             alt=""
-            style={device === "desktop" ? {} : { width: "35vw" }}
+            style={
+              device === "desktop"
+                ? {}
+                : { width: "45vw", marginLeft: "20px", marginTop: "10px" }
+            }
           />
         </div>
         <div
@@ -95,7 +99,7 @@ const Navbar = () => {
         <div className="right">
           <button
             onClick={() => setToggle(!toggle)}
-            style={device === "desktop" ? {} : { width: "30vw" }}
+            style={device === "desktop" ? {} : { width: "25vw" }}
           >
             <img
               src="/img/chinese.gif"
@@ -114,7 +118,7 @@ const Navbar = () => {
                 device === "desktop"
                   ? {}
                   : {
-                      fontSize: "2.4vw",
+                      fontSize: "3vw",
                     }
               }
             >
@@ -139,7 +143,7 @@ const Navbar = () => {
                 ? device === "desktop"
                   ? { visibility: "visible" }
                   : {
-                      bottom: "calc(-20vw - 10px)",
+                      bottom: "calc(-20vw - 20px)",
                       height: "20vw",
                       visibility: "visible",
                     }
@@ -225,7 +229,15 @@ const Navbar = () => {
 
           <div
             className="toggleNav"
-            style={device === "desktop" ? {} : { display: "block" }}
+            style={
+              device === "desktop"
+                ? {}
+                : {
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }
+            }
           >
             <img
               src="img/toggleNav.png"

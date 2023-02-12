@@ -9,7 +9,10 @@ const Wrapper = ({ title, subTitle, id, content }) => {
   const { device } = useContext(RwdContext);
   return (
     <div className="wrapper" id={id}>
-      <div className="top">
+      <div
+        className="top"
+        style={device === "desktop" ? {} : { marginBottom: 0 }}
+      >
         <div className="left">
           <h1 style={device === "desktop" ? {} : { fontSize: "3vw" }}>
             {title}
@@ -24,7 +27,10 @@ const Wrapper = ({ title, subTitle, id, content }) => {
                   device === "desktop"
                     ? subTitle?.type === "link"
                       ? { color: "#0b64ea" }
-                      : { color: "#9A9B9D" }
+                      : {
+                          color: "#9A9B9D",
+                          "&:hover": "none",
+                        }
                     : subTitle?.type === "link"
                     ? {
                         color: "#0b64ea",
@@ -33,6 +39,7 @@ const Wrapper = ({ title, subTitle, id, content }) => {
                     : {
                         color: "#9A9B9D",
                         fontSize: "2vw",
+                        "&:hover": "none",
                       }
                 }
               >

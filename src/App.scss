@@ -1,12 +1,7 @@
 .App {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
+  width: 100vw;
   padding: 0;
-  width: 100%;
+  // border: red solid 2px;
   .footer {
     display: flex;
     justify-content: center;
@@ -18,22 +13,33 @@
     color: #999999;
   }
 
-  .slideContainer {
-    // border: red solid 2px;
-    width: 90%;
-    height: 500px;
-    overflow-y: auto;
-    overflow-x: hidden;
+  .appWrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
+    padding: 0 20px;
+    width: 100%;
+    .slideContainer {
+      // border: red solid 2px;
+      width: 90%;
+      height: 650px;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
-    .title {
-      font-size: 5vw;
-      margin: 50px 20px 15px 20px;
-      color: #666666;
-      font-weight: 400;
+      .title {
+        width: 100%;
+        text-align: center;
+        font-size: 5vw;
+        margin: 50px 20px 15px 20px;
+        color: #666666;
+        font-weight: 400;
+      }
     }
   }
 }

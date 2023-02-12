@@ -1,9 +1,82 @@
+@media only screen and (min-width: 1260px) {
+  .navbar {
+    height: 4.7vw;
+    box-sizing: border-box;
+    padding: 0 50px;
+    .top {
+      .left {
+        img {
+          width: 20vw;
+          object-fit: cover;
+          // border: #0d65ea solid 2px;
+        }
+      }
+    }
+
+    .mid {
+      .item {
+        p {
+          font-size: 1.1vw;
+        }
+      }
+    }
+
+    .right {
+      button {
+        width: 9vw;
+        p {
+          font-size: 1.1vw;
+        }
+      }
+
+      .toggle {
+        bottom: -150px;
+        // border: #0d65ea solid 2px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .navbar {
+    height: 4vw;
+    padding: 0 40px;
+    .top {
+      .left {
+        img {
+          width: 17vw;
+          object-fit: cover;
+        }
+      }
+
+      .mid {
+        .item {
+          p {
+            font-size: 0.9vw;
+          }
+        }
+      }
+
+      .right {
+        width: 8vw;
+        button {
+          p {
+            font-size: 0.9vw;
+          }
+        }
+        .toggle {
+          bottom: -150px;
+          // border: #0d65ea solid 2px;
+        }
+      }
+    }
+  }
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 7vw;
   width: 100vw;
   position: sticky;
   background-color: white;
@@ -23,10 +96,7 @@
 
     .left {
       height: 100%;
-      margin-left: 20px;
-      margin-top: 10px;
       img {
-        width: 21vw;
         object-fit: cover;
       }
     }
@@ -34,7 +104,6 @@
     .mid {
       display: flex;
       height: 100%;
-      margin-left: 20px;
 
       .item {
         height: 100%;
@@ -50,15 +119,13 @@
         }
 
         p {
-          font-size: 14px;
-
           margin: 0 10px;
         }
       }
     }
 
     .right {
-      margin-right: 30px;
+      margin-right: 15px;
       height: 100%;
       display: flex;
       justify-content: center;
@@ -78,7 +145,7 @@
         p {
           padding: 0;
           margin: 0;
-          font-size: 1.1vw;
+          // font-size: 1.1vw;
         }
 
         img {
@@ -89,7 +156,7 @@
       .toggle {
         visibility: hidden;
         position: absolute;
-        bottom: -150px;
+        // bottom: -150px;
         width: 120%;
         height: 130px;
         background-color: #ffff;
@@ -131,9 +198,10 @@
 
       .toggleNav {
         display: none;
+        z-index: 3;
 
         img {
-          width: 4vw;
+          width: 6.5vw;
           cursor: pointer;
         }
       }
