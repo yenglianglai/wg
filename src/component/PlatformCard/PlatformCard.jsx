@@ -8,7 +8,7 @@ const PlatformCard = ({ imgUrl }) => {
   return (
     <div
       className="platformCard"
-      style={device === "desktop" ? {} : { width: "30%", height: "10vw" }}
+      style={device === "desktop" ? {} : { width: "31%", height: "11vw" }}
     >
       <img src={imgUrl} alt="" />
     </div>

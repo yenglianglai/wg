@@ -1,9 +1,14 @@
 .platformCard {
-  padding: 8px 3px;
-  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 15.5%;
+  height: 5.5vw;
   position: relative;
   transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+  border: black solid 0.1px;
+  margin-top: 1vw;
   // border: red solid 2px;
 
   &:hover {
@@ -12,9 +17,7 @@
   //   border: red solid 2px;
 
   img {
-    border-radius: 10px;
-    border: black solid 0.1px;
-    width: 100%;
+    width: 90%;
     height: 100%;
     object-fit: cover;
 

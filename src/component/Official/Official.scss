@@ -10,7 +10,7 @@
   .box {
     padding: 10px 40px 10px 20px;
     width: calc(50% - 30px);
-    height: 200px;
+    height: 16vw;
     // border: red solid 2px;
     border-radius: 10px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
@@ -58,6 +58,9 @@
             text-decoration: underline;
           }
           display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
           img {
             width: 28px;
             margin-right: 20px;
@@ -79,15 +82,16 @@
       // overflow: hidden;
 
       .qrcode {
-        width: calc(80% - 10px);
+        width: 8vw;
+        height: 8vw;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 5px;
+        padding: 8px;
         border-radius: 5px;
         border: #e3e3e3 solid 1px;
         img {
-          width: 100px;
+          width: 100%;
         }
       }
 

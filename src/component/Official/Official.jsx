@@ -91,7 +91,11 @@ const Official = () => {
         <>
           <div
             className="box"
-            style={{ width: "80%", height: "55vw", alignItems: "flex-start" }}
+            style={{
+              width: "80%",
+              height: "55vw",
+              alignItems: "center",
+            }}
           >
             <div
               className="left"
@@ -103,33 +107,43 @@ const Official = () => {
                 alignItems: "flex-start",
               }}
             >
-              <img src="/img/official_1.gif" alt="" style={{ width: "20vw" }} />
+              <div className="imgContainer">
+                <img
+                  src="/img/official_1.gif"
+                  alt=""
+                  style={{ width: "13vw", borderRadius: "15px" }}
+                />
+              </div>
               <div className="mid">
-                <div className="link">
+                <div className="link" style={{ gap: "4vw" }}>
                   <div className="social">
-                    <img src="/img/telegram.png" alt="" />
-                    <p>@WGUni</p>
+                    <img
+                      src="/img/telegram.png"
+                      alt=""
+                      style={{ width: "6vw" }}
+                    />
+                    <p style={{ fontSize: "2.5vw" }}>@WGUni</p>
                   </div>
                   <div className="social">
-                    <img src="/img/skype.png" alt="" />
-                    <p>Uni@wg.com</p>
+                    <img src="/img/skype.png" alt="" style={{ width: "6vw" }} />
+                    <p style={{ fontSize: "2.5vw" }}>Uni@wg.com</p>
                   </div>
 
                   <div className="social">
-                    <img src="/img/sms.png" alt="" />
-                    <p>Uni@wg.com</p>
+                    <img src="/img/sms.png" alt="" style={{ width: "6vw" }} />
+                    <p style={{ fontSize: "2.5vw" }}>Uni@wg.com</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="right" style={{ width: "50%" }}>
+            <div className="right" style={{ width: "50%", gap: "25px" }}>
               <div className="qrcode" style={{ border: "none" }}>
-                <img src="/img/qr1.gif" alt="" />
+                <img src="/img/qr1.gif" alt="" style={{ width: "17vw" }} />
               </div>
-              <div className="add">
-                <p style={{ fontSize: "2.5vw" }}>Trc20地址：</p>
-                <p style={{ fontSize: "2.5vw" }}>複製</p>
+              <div className="add" style={{ marginTop: "50px" }}>
+                <p style={{ fontSize: "3vw" }}>Trc20地址：</p>
+                <p style={{ fontSize: "3vw" }}>複製</p>
               </div>
               <p className="address" style={{ fontSize: "3vw" }}>
                 TNraQpXKQxaxJtr5DJ4LwsWVDePpi4GUUK
@@ -141,7 +155,7 @@ const Official = () => {
           </div>
           <div
             className="box"
-            style={{ width: "80%", height: "55vw", alignItems: "flex-start" }}
+            style={{ width: "80%", height: "55vw", alignItems: "center" }}
           >
             <div
               className="left"
@@ -153,38 +167,46 @@ const Official = () => {
                 alignItems: "flex-start",
               }}
             >
-              <img src="/img/official_2.gif" alt="" style={{ width: "20vw" }} />
+              <img
+                src="/img/official_2.gif"
+                alt=""
+                style={{ width: "13vw", borderRadius: "15px" }}
+              />
               <div className="mid">
-                <div className="link">
+                <div className="link" style={{ gap: "4vw" }}>
                   <div className="social">
-                    <img src="/img/telegram.png" alt="" />
-                    <p>@WGUni</p>
+                    <img
+                      src="/img/telegram.png"
+                      alt=""
+                      style={{ width: "6vw" }}
+                    />
+                    <p style={{ fontSize: "2.5vw" }}>@WGUni</p>
                   </div>
                   <div className="social">
-                    <img src="/img/skype.png" alt="" />
-                    <p>Uni@wg.com</p>
+                    <img src="/img/skype.png" alt="" style={{ width: "6vw" }} />
+                    <p style={{ fontSize: "2.5vw" }}>Uni@wg.com</p>
                   </div>
 
                   <div className="social">
-                    <img src="/img/sms.png" alt="" />
-                    <p>Uni@wg.com</p>
+                    <img src="/img/sms.png" alt="" style={{ width: "6vw" }} />
+                    <p style={{ fontSize: "2.5vw" }}>Uni@wg.com</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="right" style={{ width: "50%" }}>
+            <div className="right" style={{ width: "50%", gap: "25px" }}>
               <div className="qrcode" style={{ border: "none" }}>
-                <img src="/img/qr2.gif" alt="" />
+                <img src="/img/qr2.gif" alt="" style={{ width: "17vw" }} />
               </div>
-              <div className="add">
-                <p style={{ fontSize: "2.5vw" }}>Trc20地址：</p>
-                <p style={{ fontSize: "2.5vw" }}>複製</p>
+              <div className="add" style={{ marginTop: "50px" }}>
+                <p style={{ fontSize: "3vw" }}>Trc20地址：</p>
+                <p style={{ fontSize: "3vw" }}>複製</p>
               </div>
-              <p className="address" style={{ fontSize: "2.5vw" }}>
+              <p className="address" style={{ fontSize: "3vw" }}>
                 TNraQpXKQxaxJtr5DJ4LwsWVDePpi4GUUK
               </p>
-              <p className="warning" style={{ fontSize: "2.5vw" }}>
+              <p className="warning" style={{ fontSize: "3vw" }}>
                 認準以上地址，謹防被騙
               </p>
             </div>
