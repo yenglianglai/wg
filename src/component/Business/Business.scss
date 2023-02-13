@@ -1,7 +1,7 @@
 .business {
   width: 100vw;
   overflow: hidden;
-  margin-left: -20px;
+  margin-left: -5vw;
   .container {
     width: 200vw;
     display: flex;
@@ -11,5 +11,11 @@
       width: 100vw;
       object-fit: cover;
     }
+  }
+}
+
+@media only screen and (max-width: 1260px) {
+  .business {
+    margin-left: 0;
   }
 }

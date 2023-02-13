@@ -24,7 +24,8 @@ function App() {
   const [width, setWidth] = useState(window.innerWidth);
   const [device, setDevice] = useState("desktop");
   const [activeGame, setActiveGame] = useState(0);
-
+  const [lang, setLang] = useState("zh-TW");
+  console.log(lang);
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
   };
@@ -57,13 +58,27 @@ function App() {
         // style={device === "desktop" ? {} : { padding: "0 10px" }}
       >
         <div className="appWrapper">
-          <Navbar />
+          <Navbar setLang={setLang} />
           <Banner />
 
           {device === "desktop" ? (
             <Wrapper
-              title={"超級包網"}
-              subTitle={{ type: "link", text: "立即體驗" }}
+              title={
+                lang === "zh-TW"
+                  ? "超級包網"
+                  : lang === "zh-CN"
+                  ? "超级包网"
+                  : lang === "eng" && "Saas Super System"
+              }
+              subTitle={{
+                type: "link",
+                text:
+                  lang === "zh-TW"
+                    ? "立即體驗"
+                    : lang === "zh-CN"
+                    ? "立即体验"
+                    : lang === "eng" && "Visit demo site",
+              }}
               id={2}
               content={<Screen />}
             />
@@ -71,7 +86,15 @@ function App() {
             [
               <Wrapper
                 title={"超級包網"}
-                subTitle={{ type: "link", text: "立即體驗" }}
+                subTitle={{
+                  type: "link",
+                  text:
+                    lang === "zh-TW"
+                      ? "立即體驗"
+                      : lang === "zh-CN"
+                      ? "立即体验"
+                      : lang === "eng" && "Visit demo site",
+                }}
                 id={2}
               />,
               <div className="slideContainer" style={{ height: "70vw" }}>
@@ -113,34 +136,94 @@ function App() {
           )}
 
           <Wrapper
-            title={"遊戲API"}
+            title={
+              lang === "zh-TW"
+                ? "遊戲API"
+                : lang === "zh-CN"
+                ? "游戏API"
+                : lang === "eng" && "Game API"
+            }
             subTitle={{ type: "header" }}
             id={3}
             content={<Container />}
           />
           <Wrapper
-            title={"支付內循環"}
-            subTitle={{ type: "link", text: "聯繫商務" }}
+            title={
+              lang === "zh-TW"
+                ? "支付內循環"
+                : lang === "zh-CN"
+                ? "支付内循环"
+                : lang === "eng" && "Pay system Inner Loop"
+            }
+            subTitle={{
+              type: "link",
+              text:
+                lang === "zh-TW"
+                  ? "聯繫商務"
+                  : lang === "zh-CN"
+                  ? "联系商务"
+                  : lang === "eng" && "Contact WG",
+            }}
             id={4}
             content={<Payment />}
           />
           <Wrapper
-            title={"超級引流"}
-            subTitle={{ type: "link", text: "聯繫商務" }}
+            title={
+              lang === "zh-TW"
+                ? "超級引流"
+                : lang === "zh-CN"
+                ? "超级引流"
+                : lang === "eng" && "Super Promotion System"
+            }
+            subTitle={{
+              type: "link",
+              text:
+                lang === "zh-TW"
+                  ? "聯繫商務"
+                  : lang === "zh-CN"
+                  ? "联系商务"
+                  : lang === "eng" && "Contact WG",
+            }}
             id={5}
             content={<Business />}
           />
           <Wrapper
-            title={"合作平台"}
-            subTitle={{ type: "text", text: "只展示部分，排名不分先後" }}
+            title={
+              lang === "zh-TW"
+                ? "合作平台"
+                : lang === "zh-CN"
+                ? "支付内循环"
+                : lang === "eng" && "Cooperater"
+            }
+            subTitle={{
+              type: "text",
+              text:
+                lang === "zh-TW"
+                  ? "只展示部分，排名不分先後"
+                  : lang === "zh-CN"
+                  ? "只展示部分，排名不分先后"
+                  : lang === "eng" &&
+                    "Just show part of our provider, no particular order",
+            }}
             id={6}
             content={<Platform />}
           />
           <Wrapper
-            title={"官方商務"}
+            title={
+              lang === "zh-TW"
+                ? "官方商務"
+                : lang === "zh-CN"
+                ? "官方商务"
+                : lang === "eng" && "Official Sales"
+            }
             subTitle={{
               type: "text",
-              text: "只認準以下商務人員，其他勿信，謹防被騙",
+              text:
+                lang === "zh-TW"
+                  ? "只認準以下商務人員，其他誤信，謹防被騙"
+                  : lang === "zh-CN"
+                  ? "只认准以下商务人员，其他勿信，谨防被骗"
+                  : lang === "eng" && "Official contacts",
             }}
             id={7}
             content={<Official />}

@@ -3,7 +3,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import "./Navbar.scss";
 import { useContext } from "react";
 import { RwdContext } from "../../App";
-const Navbar = () => {
+const Navbar = ({ setLang }) => {
   const [active, setActive] = useState(0);
   const [toggle, setToggle] = useState(false);
   const [open, setOpen] = useState(false);
@@ -150,7 +150,7 @@ const Navbar = () => {
                 : {}
             }
           >
-            <div className="language">
+            <div className="language" onClick={() => setLang("zh-CN")}>
               <img
                 src="/img/chinese.gif"
                 alt=""
@@ -175,7 +175,7 @@ const Navbar = () => {
                 简体中文
               </p>
             </div>
-            <div className="language">
+            <div className="language" onClick={() => setLang("zh-TW")}>
               <img
                 src="/img/chinese.gif"
                 alt=""
@@ -200,7 +200,7 @@ const Navbar = () => {
                 繁体中文
               </p>
             </div>
-            <div className="language">
+            <div className="language" onClick={() => setLang("eng")}>
               <img
                 src="/img/english.gif"
                 alt=""

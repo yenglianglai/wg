@@ -25,7 +25,9 @@ const Card = ({ imgUrl, iconUrl, name, size, rtp }) => {
           <img
             src={iconUrl}
             alt=""
-            style={device === "desktop" ? {} : { width: "7vw", height: "7vw" }}
+            style={
+              device === "desktop" ? {} : { width: "6.5vw", height: "6.5vw" }
+            }
           />
         </div>
 

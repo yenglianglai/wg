@@ -11,7 +11,7 @@ const Wrapper = ({ title, subTitle, id, content }) => {
     <div className="wrapper" id={id}>
       <div
         className="top"
-        style={device === "desktop" ? {} : { marginBottom: 0 }}
+        style={device === "desktop" ? {} : { marginBottom: "1vw" }}
       >
         <div className="left">
           <h1 style={device === "desktop" ? {} : { fontSize: "3vw" }}>

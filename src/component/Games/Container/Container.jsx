@@ -286,13 +286,14 @@ const Container = () => {
 
   return (
     <div className="container">
-      {data[activeGame].map((game) => (
+      {data[activeGame].map((game, i) => (
         <Card
           imgUrl={game.imgUrl}
           name={game.name}
           size={game.size}
           rtp={game.rtp}
           iconUrl={game.iconUrl}
+          key={i}
         />
       ))}
     </div>
