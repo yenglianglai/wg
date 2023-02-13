@@ -1,3 +1,17 @@
+@media only screen and (min-width: 1260px) {
+  .App {
+    .appWrapper {
+      padding: 0 5vw;
+    }
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .App {
+    .appWrapper {
+      padding: 0 2vw;
+    }
+  }
+}
 .App {
   width: 100vw;
   padding: 0;
@@ -20,7 +34,7 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    padding: 0 20px;
+    // padding: 0 20px;
     width: 100%;
     .slideContainer {
       // border: red solid 2px;

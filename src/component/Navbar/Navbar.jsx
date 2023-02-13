@@ -77,7 +77,7 @@ const Navbar = () => {
                       const yOffset =
                         document.getElementById("navbar").offsetHeight;
 
-                      console.log(yOffset);
+                      // console.log(yOffset);
                       const element = document.getElementById(item.id);
                       const y =
                         element.getBoundingClientRect().top +
