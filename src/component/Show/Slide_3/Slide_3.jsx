@@ -98,7 +98,7 @@ const Slide_3 = ({ device, hover }) => {
               id={`slide_${i}`}
               style={
                 device === "desktop"
-                  ? {}
+                  ? { width: "11vw" }
                   : {
                       width: "70vw",
                     }

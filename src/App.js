@@ -25,7 +25,7 @@ function App() {
   const [device, setDevice] = useState("desktop");
   const [activeGame, setActiveGame] = useState(0);
   const [lang, setLang] = useState("zh-TW");
-  console.log(lang);
+
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
   };
@@ -58,8 +58,8 @@ function App() {
         // style={device === "desktop" ? {} : { padding: "0 10px" }}
       >
         <div className="appWrapper">
-          <Navbar setLang={setLang} />
-          <Banner />
+          <Navbar setLang={setLang} lang={lang} />
+          <Banner lang={lang} />
 
           {device === "desktop" ? (
             <Wrapper
@@ -80,12 +80,19 @@ function App() {
                     : lang === "eng" && "Visit demo site",
               }}
               id={2}
-              content={<Screen />}
+              content={<Screen lang={lang} />}
+              lang={lang}
             />
           ) : (
             [
               <Wrapper
-                title={"超級包網"}
+                title={
+                  lang === "zh-TW"
+                    ? "超級包網"
+                    : lang === "zh-CN"
+                    ? "超级包网"
+                    : lang === "eng" && "Saas Super System"
+                }
                 subTitle={{
                   type: "link",
                   text:
@@ -96,41 +103,99 @@ function App() {
                       : lang === "eng" && "Visit demo site",
                 }}
                 id={2}
+                lang={lang}
               />,
               <div className="slideContainer" style={{ height: "70vw" }}>
-                <h1 className="title">支持全球多幣種 同時經營多個國家</h1>
-                <Slide_1 device={device} style={{ width: "60vw" }} />
+                <h1 className="title">
+                  {lang === "zh-TW"
+                    ? "支持全球多幣種 同時經營多個國家"
+                    : lang === "zh-CN"
+                    ? "支持全球多币种 同时经营多个国家"
+                    : lang === "eng" &&
+                      "Support multi-currency site helps manage global player in one site"}
+                </h1>
+                <Slide_1
+                  device={device}
+                  style={{ width: "60vw" }}
+                  lang={lang}
+                />
               </div>,
               <div className="slideContainer" style={{ height: "180vw" }}>
-                <h1 className="title">2K高清畫質 原生穩定流暢</h1>
+                <h1 className="title">
+                  {lang === "zh-TW"
+                    ? "2K高清畫質 原生穩定流暢"
+                    : lang === "zh-CN"
+                    ? "2K高清画质 原生稳定流畅"
+                    : lang === "eng" &&
+                      "2K HD quality native games stable and smooth"}
+                </h1>
                 <Slide_2 device={device} />
               </div>,
               <div className="slideContainer" style={{ height: "180vw" }}>
-                <h1 className="title">活動任務全自動 網游式一鍵領取</h1>
+                <h1 className="title">
+                  {lang === "zh-TW"
+                    ? "活動任務全自動 網游式一鍵領取"
+                    : lang === "zh-CN"
+                    ? "活动任务全自动 网游式一键领取"
+                    : lang === "eng" &&
+                      "Automation event and mission just in one-click"}
+                </h1>
                 <Slide_3 device={device} />
               </div>,
               <div className="slideContainer">
-                <h1 className="title">支持20多種語言 覆蓋全球95%人群</h1>
-                <Slide_4 device={device} />
+                <h1 className="title">
+                  {lang === "zh-TW"
+                    ? "支持20多種語言 覆蓋全球95%人群"
+                    : lang === "zh-CN"
+                    ? "支持20多种语言 覆盖全球95%人群"
+                    : lang === "eng" &&
+                      "Support more than 20 languages, covering 95% of the world's population"}
+                </h1>
+                <Slide_4 device={device} lang={lang} />
               </div>,
               <div className="slideContainer">
-                <h1 className="title">收費低廉合理 服務真誠用心</h1>
+                <h1 className="title">
+                  {lang === "zh-TW"
+                    ? "收費低廉合理 服務真誠用心"
+                    : lang === "zh-CN"
+                    ? "收费低廉合理 服务真诚用心"
+                    : lang === "eng" && "Transparent and reasonable pricing"}
+                </h1>
                 <Slide_5 device={device} />
               </div>,
               <div className="slideContainer" style={{ height: "85vw" }}>
-                <h1 className="title">對賭互刷監測 出款自動校驗</h1>
-                <Slide_6 device={device} />
+                <h1 className="title">
+                  {lang === "zh-TW"
+                    ? "對賭互刷監測 出款自動校驗"
+                    : lang === "zh-CN"
+                    ? "对赌互刷监测 出款自动校验"
+                    : lang === "eng" &&
+                      "Gaming monitoring automatic payment verification"}
+                </h1>
+                <Slide_6 device={device} lang={lang} />
               </div>,
               <div className="slideContainer" style={{ height: "180vw" }}>
-                <h1 className="title">房間局自動引流 俱樂部直接躺賺</h1>
+                <h1 className="title">
+                  {lang === "zh-TW"
+                    ? "房間局自動引流 俱樂部直接躺賺"
+                    : lang === "zh-CN"
+                    ? "房间局自动引流 俱乐部直接躺赚"
+                    : lang === "eng" && "Friend invite room and Clubhouse mode"}
+                </h1>
                 <Slide_7 device={device} />
               </div>,
               <div
                 className="slideContainer"
                 style={{ height: "60vw", width: "100%" }}
               >
-                <h1 className="title">全方位抗攻擊 數據不可破解</h1>
-                <Slide_8 device={device} />
+                <h1 className="title">
+                  {lang === "zh-TW"
+                    ? "全方位抗攻擊 數據不可破解"
+                    : lang === "zh-CN"
+                    ? "全方位抗攻击 数据不可破解"
+                    : lang === "eng" && "Stable system, secure data"}
+                </h1>
+                <Slide_8 device={device} lang={lang} />
               </div>,
             ]
           )}
@@ -145,7 +210,8 @@ function App() {
             }
             subTitle={{ type: "header" }}
             id={3}
-            content={<Container />}
+            content={<Container lang={lang} />}
+            lang={lang}
           />
           <Wrapper
             title={
@@ -165,7 +231,8 @@ function App() {
                   : lang === "eng" && "Contact WG",
             }}
             id={4}
-            content={<Payment />}
+            content={<Payment lang={lang} />}
+            lang={lang}
           />
           <Wrapper
             title={
@@ -185,7 +252,8 @@ function App() {
                   : lang === "eng" && "Contact WG",
             }}
             id={5}
-            content={<Business />}
+            content={<Business lang={lang} />}
+            lang={lang}
           />
           <Wrapper
             title={
@@ -207,6 +275,7 @@ function App() {
             }}
             id={6}
             content={<Platform />}
+            lang={lang}
           />
           <Wrapper
             title={
@@ -226,7 +295,8 @@ function App() {
                   : lang === "eng" && "Official contacts",
             }}
             id={7}
-            content={<Official />}
+            content={<Official lang={lang} />}
+            lang={lang}
           />
         </div>
         <div className="footer">

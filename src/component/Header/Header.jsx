@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { RwdContext } from "../../App";
 import "./Header.scss";
 
-const Header = () => {
+const Header = ({ lang }) => {
   const { activeGame, setActiveGame, device } = useContext(RwdContext);
 
   return (
@@ -32,7 +32,11 @@ const Header = () => {
             : {}
         }
       >
-        全部
+        {lang === "zh-TW"
+          ? "全部"
+          : lang === "zh-CN"
+          ? "全部"
+          : lang === "eng" && "All"}
       </h2>
       <h2
         onClick={() => {
@@ -49,7 +53,11 @@ const Header = () => {
             : {}
         }
       >
-        棋牌
+        {lang === "zh-TW"
+          ? "棋牌"
+          : lang === "zh-CN"
+          ? "棋牌"
+          : lang === "eng" && "Cards"}
       </h2>
       <h2
         onClick={() => {
@@ -66,7 +74,11 @@ const Header = () => {
             : {}
         }
       >
-        電子
+        {lang === "zh-TW"
+          ? "電子"
+          : lang === "zh-CN"
+          ? "电子"
+          : lang === "eng" && "Slot"}
       </h2>
       <h2
         onClick={() => {
@@ -83,7 +95,11 @@ const Header = () => {
             : {}
         }
       >
-        捕魚
+        {lang === "zh-TW"
+          ? "捕魚"
+          : lang === "zh-CN"
+          ? "捕鱼"
+          : lang === "eng" && "Fishing"}
       </h2>
     </div>
   );

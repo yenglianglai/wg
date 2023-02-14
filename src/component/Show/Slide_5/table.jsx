@@ -1,4 +1,4 @@
-const Table = () => {
+const Table = ({ lang }) => {
   return (
     <table>
       <colgroup>
@@ -10,43 +10,77 @@ const Table = () => {
       <thead>
         <th>
           <div className="item">
-            遊戲類型
+            {lang === "zh-TW"
+              ? "遊戲類型"
+              : lang === "zh-CN"
+              ? "游戏类型"
+              : lang === "eng" && "Game type"}
             <img src="/img/filter.gif" alt="" />
           </div>
         </th>
         <th>
           <div className="item">
-            平台名稱
+            {lang === "zh-TW"
+              ? "平台名稱"
+              : lang === "zh-CN"
+              ? "平台名称"
+              : lang === "eng" && "Game Brand"}
             <img src="/img/filter.gif" alt="" />
           </div>
         </th>
         <th>
           <div className="item">
-            支持幣種
+            {lang === "zh-TW"
+              ? "支持幣種"
+              : lang === "zh-CN"
+              ? "支持币种"
+              : lang === "eng" && "Currency"}
             <img src="/img/filter.gif" alt="" />
           </div>
         </th>
         <th>
           <div className="item">
-            收費比例
+            {lang === "zh-TW"
+              ? "收費比例"
+              : lang === "zh-CN"
+              ? "收费比例"
+              : lang === "eng" && "Charge"}
             <img src="/img/filter.gif" alt="" />
           </div>
         </th>
       </thead>
       <tbody>
         <tr>
-          <td rowSpan={86}>棋牌遊戲</td>
+          <td rowSpan={86}>
+            {lang === "zh-TW"
+              ? "棋牌遊戲"
+              : lang === "zh-CN"
+              ? "收费比例"
+              : lang === "eng" && "Live dealer"}
+          </td>
           <td rowSpan={2}>
             <div className="item">
               <img src="/img/ag.gif" alt="" />
               AG
             </div>
           </td>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>9%</td>
         </tr>
         <tr>
-          <td>VND(越南盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "VND(越南盾)"
+              : lang === "zh-CN"
+              ? "VND(越南盾)"
+              : lang === "eng" && "VND"}
+          </td>
           <td>9%</td>
         </tr>
         <tr>
@@ -56,27 +90,63 @@ const Table = () => {
               Baison
             </div>
           </td>
-          <td>BRL(雷亞爾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "BRL(雷亞爾)"
+              : lang === "zh-CN"
+              ? "BRL(雷亚尔)"
+              : lang === "eng" && "BRL"}
+          </td>
           <td>7.5%</td>
         </tr>
         <tr>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>IDR(印尼盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "IDR(印尼盾)"
+              : lang === "zh-CN"
+              ? "IDR(印尼盾)"
+              : lang === "eng" && "IDR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>INR(盧比)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "INR(盧比)"
+              : lang === "zh-CN"
+              ? "INR(卢比)"
+              : lang === "eng" && "INR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>USD(美元)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "USD(美元)"
+              : lang === "zh-CN"
+              ? "USD(美元)"
+              : lang === "eng" && "USD"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>VND(越南盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "VND(越南盾)"
+              : lang === "zh-CN"
+              ? "VND(越南盾)"
+              : lang === "eng" && "VND"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
@@ -86,7 +156,13 @@ const Table = () => {
               BBIN
             </div>
           </td>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
@@ -96,7 +172,13 @@ const Table = () => {
               BG
             </div>
           </td>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
@@ -106,27 +188,63 @@ const Table = () => {
               CQ9
             </div>
           </td>
-          <td>BRL(雷亞爾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "BRL(雷亞爾)"
+              : lang === "zh-CN"
+              ? "BRL(雷亚尔)"
+              : lang === "eng" && "BRL"}
+          </td>
           <td>7.5%</td>
         </tr>
         <tr>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>IDR(印尼盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "IDR(印尼盾)"
+              : lang === "zh-CN"
+              ? "IDR(印尼盾)"
+              : lang === "eng" && "IDR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>INR(盧比)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "INR(盧比)"
+              : lang === "zh-CN"
+              ? "INR(卢比)"
+              : lang === "eng" && "INR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>USD(美元)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "USD(美元)"
+              : lang === "zh-CN"
+              ? "USD(美元)"
+              : lang === "eng" && "USD"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>VND(越南盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "VND(越南盾)"
+              : lang === "zh-CN"
+              ? "VND(越南盾)"
+              : lang === "eng" && "VND"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
@@ -136,27 +254,63 @@ const Table = () => {
               FC
             </div>
           </td>
-          <td>BRL(雷亞爾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "BRL(雷亞爾)"
+              : lang === "zh-CN"
+              ? "BRL(雷亚尔)"
+              : lang === "eng" && "BRL"}
+          </td>
           <td>7.5%</td>
         </tr>
         <tr>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>IDR(印尼盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "IDR(印尼盾)"
+              : lang === "zh-CN"
+              ? "IDR(印尼盾)"
+              : lang === "eng" && "IDR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>INR(盧比)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "INR(盧比)"
+              : lang === "zh-CN"
+              ? "INR(卢比)"
+              : lang === "eng" && "INR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>USD(美元)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "USD(美元)"
+              : lang === "zh-CN"
+              ? "USD(美元)"
+              : lang === "eng" && "USD"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>VND(越南盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "VND(越南盾)"
+              : lang === "zh-CN"
+              ? "VND(越南盾)"
+              : lang === "eng" && "VND"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
@@ -166,7 +320,13 @@ const Table = () => {
               FG
             </div>
           </td>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
@@ -176,7 +336,13 @@ const Table = () => {
               JDB
             </div>
           </td>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
@@ -186,27 +352,63 @@ const Table = () => {
               JILI
             </div>
           </td>
-          <td>BRL(雷亞爾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "BRL(雷亞爾)"
+              : lang === "zh-CN"
+              ? "BRL(雷亚尔)"
+              : lang === "eng" && "BRL"}
+          </td>
           <td>9%</td>
         </tr>
         <tr>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>9%</td>
         </tr>
         <tr>
-          <td>IDR(印尼盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "IDR(印尼盾)"
+              : lang === "zh-CN"
+              ? "IDR(印尼盾)"
+              : lang === "eng" && "IDR"}
+          </td>
           <td>9%</td>
         </tr>
         <tr>
-          <td>INR(盧比)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "INR(盧比)"
+              : lang === "zh-CN"
+              ? "INR(卢比)"
+              : lang === "eng" && "INR"}
+          </td>
           <td>9%</td>
         </tr>
         <tr>
-          <td>USD(美元)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "USD(美元)"
+              : lang === "zh-CN"
+              ? "USD(美元)"
+              : lang === "eng" && "USD"}
+          </td>
           <td>9%</td>
         </tr>
         <tr>
-          <td>VND(越南盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "VND(越南盾)"
+              : lang === "zh-CN"
+              ? "VND(越南盾)"
+              : lang === "eng" && "VND"}
+          </td>
           <td>9%</td>
         </tr>
         <tr>
@@ -216,27 +418,63 @@ const Table = () => {
               KA
             </div>
           </td>
-          <td>BRL(雷亞爾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "BRL(雷亞爾)"
+              : lang === "zh-CN"
+              ? "BRL(雷亚尔)"
+              : lang === "eng" && "BRL"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>IDR(印尼盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "IDR(印尼盾)"
+              : lang === "zh-CN"
+              ? "IDR(印尼盾)"
+              : lang === "eng" && "IDR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>INR(盧比)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "INR(盧比)"
+              : lang === "zh-CN"
+              ? "INR(卢比)"
+              : lang === "eng" && "INR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>USD(美元)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "USD(美元)"
+              : lang === "zh-CN"
+              ? "USD(美元)"
+              : lang === "eng" && "USD"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
-          <td>VND(越南盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "VND(越南盾)"
+              : lang === "zh-CN"
+              ? "VND(越南盾)"
+              : lang === "eng" && "VND"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
@@ -246,7 +484,13 @@ const Table = () => {
               KY
             </div>
           </td>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
@@ -256,7 +500,13 @@ const Table = () => {
               LEG
             </div>
           </td>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
@@ -266,31 +516,73 @@ const Table = () => {
               MG
             </div>
           </td>
-          <td>BRL(雷亞爾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "BRL(雷亞爾)"
+              : lang === "zh-CN"
+              ? "BRL(雷亚尔)"
+              : lang === "eng" && "BRL"}
+          </td>
           <td>10.5%</td>
         </tr>
         <tr>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>10%</td>
         </tr>
         <tr>
-          <td>IDR(印尼盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "IDR(印尼盾)"
+              : lang === "zh-CN"
+              ? "IDR(印尼盾)"
+              : lang === "eng" && "IDR"}
+          </td>
           <td>10%</td>
         </tr>
         <tr>
-          <td>INR(盧比)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "INR(盧比)"
+              : lang === "zh-CN"
+              ? "INR(卢比)"
+              : lang === "eng" && "INR"}
+          </td>
           <td>10%</td>
         </tr>
         <tr>
-          <td>PHP(披索)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "PHP(披索)"
+              : lang === "zh-CN"
+              ? "PHP(披索)"
+              : lang === "eng" && "PHP"}
+          </td>
           <td>10%</td>
         </tr>
         <tr>
-          <td>USD(美元)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "USD(美元)"
+              : lang === "zh-CN"
+              ? "USD(美元)"
+              : lang === "eng" && "USD"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
-          <td>VND(越南盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "VND(越南盾)"
+              : lang === "zh-CN"
+              ? "VND(越南盾)"
+              : lang === "eng" && "VND"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
@@ -300,27 +592,63 @@ const Table = () => {
               MT
             </div>
           </td>
-          <td>BRL(雷亞爾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "BRL(雷亞爾)"
+              : lang === "zh-CN"
+              ? "BRL(雷亚尔)"
+              : lang === "eng" && "BRL"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>IDR(印尼盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "IDR(印尼盾)"
+              : lang === "zh-CN"
+              ? "IDR(印尼盾)"
+              : lang === "eng" && "IDR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>INR(盧比)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "INR(盧比)"
+              : lang === "zh-CN"
+              ? "INR(卢比)"
+              : lang === "eng" && "INR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>USD(美元)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "USD(美元)"
+              : lang === "zh-CN"
+              ? "USD(美元)"
+              : lang === "eng" && "USD"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
-          <td>VND(越南盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "VND(越南盾)"
+              : lang === "zh-CN"
+              ? "VND(越南盾)"
+              : lang === "eng" && "VND"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
@@ -330,7 +658,13 @@ const Table = () => {
               NW
             </div>
           </td>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
@@ -340,27 +674,63 @@ const Table = () => {
               PS
             </div>
           </td>
-          <td>BRL(雷亞爾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "BRL(雷亞爾)"
+              : lang === "zh-CN"
+              ? "BRL(雷亚尔)"
+              : lang === "eng" && "BRL"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>IDR(印尼盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "IDR(印尼盾)"
+              : lang === "zh-CN"
+              ? "IDR(印尼盾)"
+              : lang === "eng" && "IDR"}
+          </td>
           <td>8.5%</td>
         </tr>
         <tr>
-          <td>INR(盧比)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "INR(盧比)"
+              : lang === "zh-CN"
+              ? "INR(卢比)"
+              : lang === "eng" && "INR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>USD(美元)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "USD(美元)"
+              : lang === "zh-CN"
+              ? "USD(美元)"
+              : lang === "eng" && "USD"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
-          <td>VND(越南盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "VND(越南盾)"
+              : lang === "zh-CN"
+              ? "VND(越南盾)"
+              : lang === "eng" && "VND"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
@@ -370,27 +740,63 @@ const Table = () => {
               RICH88
             </div>
           </td>
-          <td>BRL(雷亞爾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "BRL(雷亞爾)"
+              : lang === "zh-CN"
+              ? "BRL(雷亚尔)"
+              : lang === "eng" && "BRL"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7.5%</td>
         </tr>
         <tr>
-          <td>IDR(印尼盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "IDR(印尼盾)"
+              : lang === "zh-CN"
+              ? "IDR(印尼盾)"
+              : lang === "eng" && "IDR"}
+          </td>
           <td>7.5%</td>
         </tr>
         <tr>
-          <td>INR(盧比)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "INR(盧比)"
+              : lang === "zh-CN"
+              ? "INR(卢比)"
+              : lang === "eng" && "INR"}
+          </td>
           <td>7.5%</td>
         </tr>
         <tr>
-          <td>USD(美元)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "USD(美元)"
+              : lang === "zh-CN"
+              ? "USD(美元)"
+              : lang === "eng" && "USD"}
+          </td>
           <td>7.5%</td>
         </tr>
         <tr>
-          <td>VND(越南盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "VND(越南盾)"
+              : lang === "zh-CN"
+              ? "VND(越南盾)"
+              : lang === "eng" && "VND"}
+          </td>
           <td>8%</td>
         </tr>
         <tr>
@@ -400,27 +806,63 @@ const Table = () => {
               SG
             </div>
           </td>
-          <td>BRL(雷亞爾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "BRL(雷亞爾)"
+              : lang === "zh-CN"
+              ? "BRL(雷亚尔)"
+              : lang === "eng" && "BRL"}
+          </td>
           <td>9%</td>
         </tr>
         <tr>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>IDR(印尼盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "IDR(印尼盾)"
+              : lang === "zh-CN"
+              ? "IDR(印尼盾)"
+              : lang === "eng" && "IDR"}
+          </td>
           <td>7.5%</td>
         </tr>
         <tr>
-          <td>INR(盧比)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "INR(盧比)"
+              : lang === "zh-CN"
+              ? "INR(卢比)"
+              : lang === "eng" && "INR"}
+          </td>
           <td>7.5%</td>
         </tr>
         <tr>
-          <td>USD(美元)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "USD(美元)"
+              : lang === "zh-CN"
+              ? "USD(美元)"
+              : lang === "eng" && "USD"}
+          </td>
           <td>7.5%</td>
         </tr>
         <tr>
-          <td>VND(越南盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "VND(越南盾)"
+              : lang === "zh-CN"
+              ? "VND(越南盾)"
+              : lang === "eng" && "VND"}
+          </td>
           <td>7.5%</td>
         </tr>
         <tr>
@@ -430,35 +872,83 @@ const Table = () => {
               WG
             </div>
           </td>
-          <td>BRL(雷亞爾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "BRL(雷亞爾)"
+              : lang === "zh-CN"
+              ? "BRL(雷亚尔)"
+              : lang === "eng" && "BRL"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>IDR(印尼盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "IDR(印尼盾)"
+              : lang === "zh-CN"
+              ? "IDR(印尼盾)"
+              : lang === "eng" && "IDR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>INR(盧比)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "INR(盧比)"
+              : lang === "zh-CN"
+              ? "INR(卢比)"
+              : lang === "eng" && "INR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>PHP(披索)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "PHP(披索)"
+              : lang === "zh-CN"
+              ? "PHP(披索)"
+              : lang === "eng" && "PHP"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>THB(泰銖)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "THB(泰銖)"
+              : lang === "zh-CN"
+              ? "THB(泰铢)"
+              : lang === "eng" && "THB"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>USD(美元)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "USD(美元)"
+              : lang === "zh-CN"
+              ? "USD(美元)"
+              : lang === "eng" && "USD"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>VND(越南盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "VND(越南盾)"
+              : lang === "zh-CN"
+              ? "VND(越南盾)"
+              : lang === "eng" && "VND"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
@@ -468,7 +958,13 @@ const Table = () => {
               WL
             </div>
           </td>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
@@ -478,27 +974,64 @@ const Table = () => {
               YGR
             </div>
           </td>
-          <td>BRL(雷亞爾)</td>
+          <td>
+            {" "}
+            {lang === "zh-TW"
+              ? "BRL(雷亞爾)"
+              : lang === "zh-CN"
+              ? "BRL(雷亚尔)"
+              : lang === "eng" && "BRL"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>CNY(人民幣)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "CNY(人民幣)"
+              : lang === "zh-CN"
+              ? "CNY(人民币)"
+              : lang === "eng" && "CNY"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>IDR(印尼盾)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "IDR(印尼盾)"
+              : lang === "zh-CN"
+              ? "IDR(印尼盾)"
+              : lang === "eng" && "IDR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>INR(盧比)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "INR(盧比)"
+              : lang === "zh-CN"
+              ? "INR(卢比)"
+              : lang === "eng" && "INR"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>PHP(披索)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "PHP(披索)"
+              : lang === "zh-CN"
+              ? "PHP(披索)"
+              : lang === "eng" && "PHP"}
+          </td>
           <td>7%</td>
         </tr>
         <tr>
-          <td>USD(美元)</td>
+          <td>
+            {lang === "zh-TW"
+              ? "USD(美元)"
+              : lang === "zh-CN"
+              ? "USD(美元)"
+              : lang === "eng" && "USD"}
+          </td>
           <td>7%</td>
         </tr>
       </tbody>

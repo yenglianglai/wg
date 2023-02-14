@@ -3,7 +3,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import "./Navbar.scss";
 import { useContext } from "react";
 import { RwdContext } from "../../App";
-const Navbar = ({ setLang }) => {
+const Navbar = ({ lang, setLang }) => {
   const [active, setActive] = useState(0);
   const [toggle, setToggle] = useState(false);
   const [open, setOpen] = useState(false);
@@ -12,31 +12,66 @@ const Navbar = ({ setLang }) => {
   const items = [
     {
       id: 1,
-      title: "關於WG",
+      title:
+        lang === "zh-TW"
+          ? "關於WG"
+          : lang === "zh-CN"
+          ? "关于WG"
+          : lang === "eng" && "About WG",
     },
     {
       id: 2,
-      title: "超級包網",
+      title:
+        lang === "zh-TW"
+          ? "超級包網"
+          : lang === "zh-CN"
+          ? "超级包网"
+          : lang === "eng" && "Saas Super System",
     },
     {
       id: 3,
-      title: "遊戲API",
+      title:
+        lang === "zh-TW"
+          ? "遊戲API"
+          : lang === "zh-CN"
+          ? "游戏API"
+          : lang === "eng" && "Game API",
     },
     {
       id: 4,
-      title: "支付內循環",
+      title:
+        lang === "zh-TW"
+          ? "支付內循環"
+          : lang === "zh-CN"
+          ? "支付内循环"
+          : lang === "eng" && "Pay system Inner Loop",
     },
     {
       id: 5,
-      title: "超級引流",
+      title:
+        lang === "zh-TW"
+          ? "超級引流"
+          : lang === "zh-CN"
+          ? "超级引流"
+          : lang === "eng" && "Super Promotion System",
     },
     {
       id: 6,
-      title: "合作平台",
+      title:
+        lang === "zh-TW"
+          ? "合作平台"
+          : lang === "zh-CN"
+          ? "合作平台"
+          : lang === "eng" && "Cooperater",
     },
     {
       id: 7,
-      title: "官方商務",
+      title:
+        lang === "zh-TW"
+          ? "官方商務"
+          : lang === "zh-CN"
+          ? "官方商务"
+          : lang === "eng" && "Official Sales",
     },
   ];
   return (
@@ -48,7 +83,13 @@ const Navbar = ({ setLang }) => {
       <div className="top">
         <div className="left">
           <img
-            src="/img/LOGO.jpg"
+            src={
+              lang === "zh-TW"
+                ? "/img/LOGO.jpg"
+                : lang === "zh-CN"
+                ? "/img/LOGO_sim.png"
+                : "/img/LOGO_eng.png"
+            }
             alt=""
             style={
               device === "desktop"
@@ -102,7 +143,13 @@ const Navbar = ({ setLang }) => {
             style={device === "desktop" ? {} : { width: "25vw" }}
           >
             <img
-              src="/img/chinese.gif"
+              src={
+                lang === "zh-TW"
+                  ? "/img/chinese.gif"
+                  : lang === "zh-CN"
+                  ? "/img/chinese.gif"
+                  : lang === "eng" && "/img/english.gif"
+              }
               alt=""
               style={
                 device === "desktop"
@@ -122,7 +169,11 @@ const Navbar = ({ setLang }) => {
                     }
               }
             >
-              繁体中文
+              {lang === "zh-TW"
+                ? "繁體中文"
+                : lang === "zh-CN"
+                ? "简体中文"
+                : lang === "eng" && "English"}
             </p>
             <KeyboardArrowDownIcon
               fontSize="small"
@@ -150,7 +201,13 @@ const Navbar = ({ setLang }) => {
                 : {}
             }
           >
-            <div className="language" onClick={() => setLang("zh-CN")}>
+            <div
+              className="language"
+              onClick={() => {
+                setLang("zh-CN");
+                setToggle(!toggle);
+              }}
+            >
               <img
                 src="/img/chinese.gif"
                 alt=""
@@ -175,7 +232,13 @@ const Navbar = ({ setLang }) => {
                 简体中文
               </p>
             </div>
-            <div className="language" onClick={() => setLang("zh-TW")}>
+            <div
+              className="language"
+              onClick={() => {
+                setLang("zh-TW");
+                setToggle(!toggle);
+              }}
+            >
               <img
                 src="/img/chinese.gif"
                 alt=""
@@ -200,7 +263,13 @@ const Navbar = ({ setLang }) => {
                 繁体中文
               </p>
             </div>
-            <div className="language" onClick={() => setLang("eng")}>
+            <div
+              className="language"
+              onClick={() => {
+                setLang("eng");
+                setToggle(!toggle);
+              }}
+            >
               <img
                 src="/img/english.gif"
                 alt=""

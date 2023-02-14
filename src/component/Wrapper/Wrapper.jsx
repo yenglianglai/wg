@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 import { useContext } from "react";
 import { RwdContext } from "../../App";
 
-const Wrapper = ({ title, subTitle, id, content }) => {
+const Wrapper = ({ title, subTitle, id, content, lang }) => {
   const { device } = useContext(RwdContext);
   return (
     <div className="wrapper" id={id}>
@@ -19,7 +19,7 @@ const Wrapper = ({ title, subTitle, id, content }) => {
           </h1>
           <p> | </p>
           {subTitle?.type === "header" ? (
-            <Header />
+            <Header lang={lang} />
           ) : (
             <div className="function">
               <p
@@ -58,7 +58,13 @@ const Wrapper = ({ title, subTitle, id, content }) => {
         <div className="right">
           {subTitle?.type === "link" && (
             <img
-              src="/img/discount.png"
+              src={
+                lang === "zh-TW"
+                  ? "/img/discount.png"
+                  : lang === "zh-CN"
+                  ? "/img/discount_sim.png"
+                  : "/img/discount_eng.png"
+              }
               alt=""
               style={device === "desktop" ? {} : { width: "30vw" }}
             />

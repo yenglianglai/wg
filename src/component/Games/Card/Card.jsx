@@ -1,10 +1,9 @@
-import { style } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import "./Card.scss";
 import { useContext } from "react";
 import { RwdContext } from "../../../App";
 
-const Card = ({ imgUrl, iconUrl, name, size, rtp }) => {
+const Card = ({ imgUrl, iconUrl, name, size, rtp, lang }) => {
   const [scale, setScale] = useState(true);
   const { device } = useContext(RwdContext);
   useEffect(() => {
@@ -33,7 +32,9 @@ const Card = ({ imgUrl, iconUrl, name, size, rtp }) => {
 
         <div className="mid">
           <p className="name">{name}</p>
-          <p className="size">大小 : {size}MB</p>
+          <p className="size">
+            {lang === "eng" ? `SIZE : ${size}MB` : `大小 : ${size}MB`}
+          </p>
         </div>
 
         <div className="right">
