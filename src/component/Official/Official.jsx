@@ -173,7 +173,7 @@ const Official = ({ lang }) => {
               </div>
             </div>
 
-            <div className="right" style={{ width: "50%", gap: "25px" }}>
+            <div className="right" style={{ width: "50%", gap: "1vw" }}>
               <div className="qrcode" style={{ border: "none" }}>
                 <img src="/img/qr1.gif" alt="" style={{ width: "17vw" }} />
               </div>
@@ -247,7 +247,7 @@ const Official = ({ lang }) => {
               </div>
             </div>
 
-            <div className="right" style={{ width: "50%", gap: "25px" }}>
+            <div className="right" style={{ width: "50%", gap: "1vw" }}>
               <div className="qrcode" style={{ border: "none" }}>
                 <img src="/img/qr2.gif" alt="" style={{ width: "17vw" }} />
               </div>

@@ -19,6 +19,10 @@ const Card = ({ imgUrl, iconUrl, name, size, rtp, lang }) => {
       style={device === "desktop" ? {} : { width: "calc(50% - 16px)" }}
     >
       <img src={imgUrl} alt="" />
+      <div className="playCircle">
+        <img src="/img/playButton.png" alt="" className="play" />
+      </div>
+
       <div className="desc">
         <div className="left">
           <img
