@@ -367,7 +367,7 @@ const Navbar = ({ lang, setLang }) => {
                         }
                       : () => {
                           setActive(item.id);
-                          window.scrollTo({ top: 80, behavior: "smooth" });
+                          window.scrollTo({ top: 0, behavior: "smooth" });
                           setOpen(false);
                         }
                   }
