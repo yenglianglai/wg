@@ -89,7 +89,7 @@ const Slide_2 = ({ device, hover }) => {
                 fontSize: "3vw",
                 background: "none",
                 gap: "10vw",
-                padding: "0 10vw",
+                padding: "0 2vw",
               }
         }
       >
