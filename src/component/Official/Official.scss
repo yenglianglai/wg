@@ -19,6 +19,32 @@
     align-items: center;
     justify-content: space-between;
 
+    animation: scaling 0.8s;
+    -webkit-animation: scaling 0.8s;
+
+    animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+
+    @keyframes scaling {
+      from {
+        transform: scale(0.2);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+
+    @-webkit-keyframes scaling {
+      from {
+        transform: scale(0.2);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+
     .left {
       width: 15%;
       padding: 15px;

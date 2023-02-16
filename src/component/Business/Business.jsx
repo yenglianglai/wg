@@ -1,8 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./Business.scss";
 
-const Business = ({ lang }) => {
+const Business = ({ lang, businessRender }) => {
   const [slide, setSlide] = useState(false);
+  const [, updateState] = useState();
+  const forceUpdate = useCallback(() => updateState({}), []);
+  useEffect(() => {
+    forceUpdate();
+  }, [businessRender]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -11,7 +16,7 @@ const Business = ({ lang }) => {
     return () => clearInterval(interval);
   }, [slide]);
   return (
-    <div className="business">
+    <div className="business" key={Math.random()}>
       <div
         className="container"
         style={{

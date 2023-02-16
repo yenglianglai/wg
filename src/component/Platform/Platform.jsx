@@ -1,8 +1,14 @@
 import React from "react";
 import PlatformCard from "../PlatformCard/PlatformCard";
 import "./Platform.scss";
+import { useState, useEffect, useCallback } from "react";
 
-const Platform = () => {
+const Platform = ({ platformRender }) => {
+  const [, updateState] = useState();
+  const forceUpdate = useCallback(() => updateState({}), []);
+  useEffect(() => {
+    forceUpdate();
+  }, [platformRender]);
   const data = [
     "/img/p1.png",
     "/img/p2.png",
@@ -18,7 +24,7 @@ const Platform = () => {
     "/img/p12.png",
   ];
   return (
-    <div className="platform">
+    <div className="platform" key={Math.random()}>
       {data.map((platform, i) => (
         <PlatformCard imgUrl={platform} key={i} />
       ))}

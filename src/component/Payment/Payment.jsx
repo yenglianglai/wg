@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./Payment.scss";
 
-const Payment = ({ lang }) => {
+const Payment = ({ lang, paymentRender }) => {
+  const [, updateState] = useState();
+  const forceUpdate = useCallback(() => updateState({}), []);
+  useEffect(() => {
+    forceUpdate();
+    console.log(paymentRender);
+  }, [paymentRender]);
   return (
-    <div className="payment">
+    <div className="payment" key={Math.random()}>
       <img
         src={
           lang === "zh-TW"

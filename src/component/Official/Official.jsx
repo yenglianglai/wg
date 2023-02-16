@@ -1,15 +1,20 @@
 import React from "react";
 import "./Official.scss";
-import { useContext } from "react";
+import { useContext, useState, useEffect, useCallback } from "react";
 import { RwdContext } from "../../App";
-import { border } from "@mui/system";
 
-const Official = ({ lang }) => {
+const Official = ({ lang, offcialRender }) => {
+  const [, updateState] = useState();
+  const forceUpdate = useCallback(() => updateState({}), []);
+  useEffect(() => {
+    forceUpdate();
+  }, [offcialRender]);
   const { device } = useContext(RwdContext);
   return (
     <div
       className="official"
       style={device === "desktop" ? {} : { flexDirection: "column" }}
+      key={Math.random()}
     >
       {device === "desktop" ? (
         <>

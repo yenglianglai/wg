@@ -18,6 +18,18 @@
     }
   }
 
+  @-webkit-keyframes scaling {
+    from {
+      transform: scale(0.2);
+      opacity: (0.1);
+    }
+
+    to {
+      transform: scale(1);
+      opacity: (1);
+    }
+  }
+
   &:hover {
     transform: translateY(-10px);
   }

@@ -2,6 +2,28 @@
   width: 100vw;
   overflow: hidden;
   margin-left: -5vw;
+  animation: blur 1s;
+  -webkit-animation: blur 1s;
+
+  @keyframes blur {
+    from {
+      -webkit-filter: blur(10px);
+    }
+
+    to {
+      -webkit-filter: blur(0px);
+    }
+  }
+
+  @-webkit-keyframes blur {
+    from {
+      -webkit-filter: blur(10px);
+    }
+
+    to {
+      -webkit-filter: blur(0px);
+    }
+  }
   .container {
     width: 200vw;
     display: flex;

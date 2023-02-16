@@ -5,6 +5,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: blur 0.8s;
+  -webkit-animation: blur 0.8s;
+
+  @keyframes blur {
+    from {
+      -webkit-filter: blur(10px);
+    }
+
+    to {
+      -webkit-filter: blur(0px);
+    }
+  }
+
+  @-webkit-keyframes blur {
+    from {
+      -webkit-filter: blur(10px);
+    }
+
+    to {
+      -webkit-filter: blur(0px);
+    }
+  }
   img {
     width: 80%;
     // border: red solid 2px;

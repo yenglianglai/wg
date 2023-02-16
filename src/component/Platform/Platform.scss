@@ -9,5 +9,28 @@
   flex-wrap: wrap;
   width: 100%;
 
+  animation: blur 0.8s;
+  -webkit-animation: blur 0.8s;
+
+  @keyframes blur {
+    from {
+      -webkit-filter: blur(10px);
+    }
+
+    to {
+      -webkit-filter: blur(0px);
+    }
+  }
+
+  @-webkit-keyframes blur {
+    from {
+      -webkit-filter: blur(10px);
+    }
+
+    to {
+      -webkit-filter: blur(0px);
+    }
+  }
+
   // border: red solid 2px;
 }

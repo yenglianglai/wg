@@ -26,13 +26,23 @@ function App() {
   const [activeGame, setActiveGame] = useState(0);
   const [lang, setLang] = useState("zh-TW");
   const [containerRender, setContainerRender] = useState(false);
+  const [paymentRender, setPaymentRender] = useState(false);
+  const [businessRender, setBusinessRender] = useState(false);
+  const [platformRender, setPlatformRender] = useState(false);
+  const [officialRender, setOfficialRender] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const gameEle = document.getElementById(3);
       const paymentEle = document.getElementById(4);
+      const businessEle = document.getElementById(5);
+      const PlatformEle = document.getElementById(6);
+      const OfficialEle = document.getElementById(7);
       const gameOffset = gameEle.offsetTop;
       const paymentOffset = paymentEle.offsetTop;
+      const businessOffset = businessEle.offsetTop;
+      const PlatformOffset = PlatformEle.offsetTop;
+      const officialOffset = OfficialEle.offsetTop;
       window.addEventListener("scroll", () => {
         if (
           window.pageYOffset > gameOffset &&
@@ -41,6 +51,30 @@ function App() {
           setContainerRender(true);
         } else {
           setContainerRender(false);
+        }
+        if (
+          window.pageYOffset > paymentOffset &&
+          window.pageYOffset < businessOffset
+        ) {
+          setPaymentRender(true);
+        } else {
+          setPaymentRender(false);
+        }
+
+        if (
+          window.pageYOffset > businessOffset &&
+          window.pageYOffset < PlatformOffset
+        ) {
+          setBusinessRender(true);
+        } else {
+          setBusinessRender(false);
+        }
+        if (window.pageYOffset > officialOffset) {
+          setPlatformRender(true);
+          setOfficialRender(true);
+        } else {
+          setPlatformRender(false);
+          setOfficialRender(false);
         }
       });
     }
@@ -253,7 +287,7 @@ function App() {
                   : lang === "eng" && "Contact WG",
             }}
             id={4}
-            content={<Payment lang={lang} />}
+            content={<Payment lang={lang} paymentRender={paymentRender} />}
             lang={lang}
           />
           <Wrapper
@@ -274,7 +308,7 @@ function App() {
                   : lang === "eng" && "Contact WG",
             }}
             id={5}
-            content={<Business lang={lang} />}
+            content={<Business lang={lang} businessRender={businessRender} />}
             lang={lang}
           />
           <Wrapper
@@ -296,7 +330,7 @@ function App() {
                     "Just show part of our provider, no particular order",
             }}
             id={6}
-            content={<Platform />}
+            content={<Platform platformRender={platformRender} />}
             lang={lang}
           />
           <Wrapper
@@ -317,7 +351,7 @@ function App() {
                   : lang === "eng" && "Official contacts",
             }}
             id={7}
-            content={<Official lang={lang} />}
+            content={<Official lang={lang} officialRender={officialRender} />}
             lang={lang}
           />
         </div>

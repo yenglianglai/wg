@@ -475,7 +475,6 @@ const Container = ({ lang, containerRender }) => {
   const [, updateState] = useState();
   const forceUpdate = useCallback(() => updateState({}), []);
   useEffect(() => {
-    console.log(123);
     forceUpdate();
   }, [containerRender]);
 
