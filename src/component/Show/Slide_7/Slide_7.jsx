@@ -15,7 +15,7 @@ const images = [
 ];
 
 const Slide_7 = ({ device, hover }) => {
-  const [slide, setSlide] = useState(2);
+  const [slide, setSlide] = useState(3);
   console.log(slide);
   const CustomRightArrow = ({ onClick }) => {
     function handleClick() {
@@ -68,7 +68,7 @@ const Slide_7 = ({ device, hover }) => {
       <CustomLeftArrow
         className="react-multiple-carousel__arrow react-multiple-carousel__arrow--left"
         onClick={
-          slide === 2
+          slide === 3
             ? () => {}
             : () => {
                 setSlide((slide) => slide - 1);
