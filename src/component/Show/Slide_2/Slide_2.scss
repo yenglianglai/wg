@@ -1,15 +1,17 @@
 .container {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
+  padding: 0;
+  border: red solid 2px;
 
   .carousel {
     transition: all 0.5s ease-in-out;
     display: flex;
     gap: 2vw;
-    width: fit-content;
-    padding: 0 2vw;
+    width: 100%;
+    // padding: 0 2vw;
     height: 100%;
     background-image: url(/img/slide_3_bg.png);
     background-repeat: no-repeat;
@@ -22,7 +24,7 @@
     cursor: -webkit-grab;
 
     position: absolute;
-    left: 500px;
+    left: -100px;
 
     animation: slide 0.5s forwards, blur 1s;
     -webkit-animation: slide 0.5s forwards, blur 1s;
@@ -30,18 +32,15 @@
     -o-animation: slide 0.5s forwards, blur 1s;
     -ms-animation: slide 0.5s forwards, blur 1s;
 
-    -webkit-animation-delay: 0s;
-    animation-delay: 0s;
-
     @-webkit-keyframes slide {
       100% {
-        left: 0;
+        left: -5vw;
       }
     }
 
     @keyframes slide {
       100% {
-        left: 0;
+        left: -5vw;
       }
     }
     @-webkit-keyframes blur {
@@ -75,7 +74,7 @@
       justify-content: center;
       align-items: center;
       // border: red solid 2px;
-      padding-right: 2vw;
+      // padding-right: 2vw;
 
       img {
         object-fit: cover;

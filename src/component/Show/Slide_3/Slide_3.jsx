@@ -70,7 +70,7 @@ const Slide_3 = ({ device, hover }) => {
       <CustomLeftArrow
         className="react-multiple-carousel__arrow react-multiple-carousel__arrow--left"
         onClick={
-          slide === 0
+          slide === 3
             ? () => {}
             : () => {
                 setSlide((slide) => slide - 1);
@@ -83,11 +83,11 @@ const Slide_3 = ({ device, hover }) => {
           device === "desktop"
             ? { transform: `translateX(-${slide * 170}px)` }
             : {
-                transform: `translateX(-${slide * 83}vw)`,
+                transform: `translateX(-${slide * 74}vw)`,
                 fontSize: "3vw",
                 background: "none",
                 gap: "10vw",
-                padding: "0 10vw",
+                padding: "0 100vw",
               }
         }
       >

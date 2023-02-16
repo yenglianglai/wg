@@ -15,7 +15,8 @@ const images = [
 ];
 
 const Slide_7 = ({ device, hover }) => {
-  const [slide, setSlide] = useState(3);
+  const [slide, setSlide] = useState(2);
+  console.log(slide);
   const CustomRightArrow = ({ onClick }) => {
     function handleClick() {
       onClick();
@@ -67,7 +68,7 @@ const Slide_7 = ({ device, hover }) => {
       <CustomLeftArrow
         className="react-multiple-carousel__arrow react-multiple-carousel__arrow--left"
         onClick={
-          slide === 0
+          slide === 2
             ? () => {}
             : () => {
                 setSlide((slide) => slide - 1);
@@ -80,11 +81,11 @@ const Slide_7 = ({ device, hover }) => {
           device === "desktop"
             ? { transform: `translateX(-${slide * 170}px)` }
             : {
-                transform: `translateX(-${slide * 83}vw)`,
+                transform: `translateX(-${slide * 82}vw)`,
                 fontSize: "3vw",
                 background: "none",
                 gap: "10vw",
-                padding: "0 10vw",
+                padding: "0 40vw",
               }
         }
       >
