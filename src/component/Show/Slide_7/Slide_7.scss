@@ -24,10 +24,10 @@
     position: absolute;
     left: 500px;
 
-    animation: fadeIn 1.5s, slide 0.5s forwards, blur 1s;
-    -webkit-animation: fadeIn 1.5s, slide 0.5s forwards, blur 1s;
-    -moz-animation: fadeIn 1.5s, slide 0.5s forwards, blur 1s;
-    -o-animation: fadeIn 1.5s, slide 0.5s forwards, blur 1s;
+    animation: fadeIn 1.5s, slide 0.5s, blur 1s forwards;
+    -webkit-animation: fadeIn 1.5s, slide 0.5s, blur 1s forwards;
+    -moz-animation: fadeIn 1.5s, slide 0.5s, blur 1s forwards;
+    -o-animation: fadeIn 1.5s, slide 0.5s, blur 1s forwards;
     -ms-animation: fadeIn 1.5s, slide 0.5s forwards, blur 1s;
 
     -webkit-animation-delay: 0.5s;

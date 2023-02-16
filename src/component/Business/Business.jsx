@@ -3,11 +3,6 @@ import "./Business.scss";
 
 const Business = ({ lang, businessRender }) => {
   const [slide, setSlide] = useState(false);
-  const [, updateState] = useState();
-  const forceUpdate = useCallback(() => updateState({}), []);
-  useEffect(() => {
-    forceUpdate();
-  }, [businessRender]);
 
   useEffect(() => {
     const interval = setInterval(() => {
