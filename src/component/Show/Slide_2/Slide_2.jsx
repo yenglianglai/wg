@@ -85,11 +85,11 @@ const Slide_2 = ({ device, hover }) => {
           device === "desktop"
             ? { transform: `translateX(-${slide * 170}px)` }
             : {
-                transform: `translateX(-${slide * 80}vw)`,
+                transform: `translateX(-${slide * 84}vw)`,
                 fontSize: "3vw",
                 background: "none",
                 gap: "10vw",
-                padding: "0 2vw",
+                padding: "0 10vw",
               }
         }
       >
