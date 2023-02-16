@@ -17,6 +17,7 @@ import Slide_5 from "./component/Show/Slide_5/Slide_5";
 import Slide_6 from "./component/Show/Slide_6/Slide_6";
 import Slide_7 from "./component/Show/Slide_7/Slide_7";
 import Slide_8 from "./component/Show/Slide_8/Slide_8";
+import Window from "./component/window/Window";
 
 export const RwdContext = createContext(null);
 
@@ -30,6 +31,7 @@ function App() {
   const [businessRender, setBusinessRender] = useState(false);
   const [platformRender, setPlatformRender] = useState(false);
   const [officialRender, setOfficialRender] = useState(false);
+  const [open, setModalOpen] = useState(true);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -107,12 +109,25 @@ function App() {
 
   return (
     <RwdContext.Provider value={{ device, setActiveGame, activeGame }}>
-      <div
-        className="App"
-        // style={device === "desktop" ? {} : { padding: "0 10px" }}
-      >
-        <div className="appWrapper">
-          <Navbar setLang={setLang} lang={lang} />
+      <div className="App">
+        <Window
+          lang={lang}
+          open={open}
+          setModalOpen={setModalOpen}
+          device={device}
+        />
+        <div
+          className="appWrapper"
+          style={
+            open
+              ? {
+                  backgroundColor: "rgba(18, 17, 17, 0.525)",
+                  filter: "brightness(50%)",
+                }
+              : {}
+          }
+        >
+          <Navbar setLang={setLang} lang={lang} setModalOpen={setModalOpen} />
           <Banner lang={lang} />
 
           {device === "desktop" ? (

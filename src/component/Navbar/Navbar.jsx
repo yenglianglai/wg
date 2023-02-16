@@ -3,7 +3,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import "./Navbar.scss";
 import { useContext } from "react";
 import { RwdContext } from "../../App";
-const Navbar = ({ lang, setLang }) => {
+const Navbar = ({ lang, setLang, setModalOpen }) => {
   const [active, setActive] = useState(0);
   const [toggle, setToggle] = useState(false);
   const [open, setOpen] = useState(false);
@@ -208,6 +208,8 @@ const Navbar = ({ lang, setLang }) => {
               className="language"
               onClick={() => {
                 setLang("zh-CN");
+                setModalOpen(true);
+                window.scrollTo({ top: 0, behavior: "smooth" });
                 setToggle(!toggle);
               }}
             >
@@ -239,6 +241,8 @@ const Navbar = ({ lang, setLang }) => {
               className="language"
               onClick={() => {
                 setLang("zh-TW");
+                setModalOpen(true);
+                window.scrollTo({ top: 0, behavior: "smooth" });
                 setToggle(!toggle);
               }}
             >
@@ -270,6 +274,8 @@ const Navbar = ({ lang, setLang }) => {
               className="language"
               onClick={() => {
                 setLang("eng");
+                setModalOpen(true);
+                window.scrollTo({ top: 0, behavior: "smooth" });
                 setToggle(!toggle);
               }}
             >
