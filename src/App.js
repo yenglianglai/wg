@@ -4,7 +4,7 @@ import Navbar from "./component/Navbar/Navbar";
 import Wrapper from "./component/Wrapper/Wrapper";
 import Screen from "./component/Screen/Screen";
 import Payment from "./component/Payment/Payment";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useRef } from "react";
 import Container from "./component/Games/Container/Container";
 import Business from "./component/Business/Business";
 import Platform from "./component/Platform/Platform";
@@ -25,6 +25,26 @@ function App() {
   const [device, setDevice] = useState("desktop");
   const [activeGame, setActiveGame] = useState(0);
   const [lang, setLang] = useState("zh-TW");
+  const [containerRender, setContainerRender] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const gameEle = document.getElementById(3);
+      const paymentEle = document.getElementById(4);
+      const gameOffset = gameEle.offsetTop;
+      const paymentOffset = paymentEle.offsetTop;
+      window.addEventListener("scroll", () => {
+        if (
+          window.pageYOffset > gameOffset &&
+          window.pageYOffset < paymentOffset
+        ) {
+          setContainerRender(true);
+        } else {
+          setContainerRender(false);
+        }
+      });
+    }
+  }, []);
 
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
@@ -210,7 +230,9 @@ function App() {
             }
             subTitle={{ type: "header" }}
             id={3}
-            content={<Container lang={lang} />}
+            content={
+              <Container lang={lang} containerRender={containerRender} />
+            }
             lang={lang}
           />
           <Wrapper

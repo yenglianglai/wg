@@ -21,6 +21,50 @@
     cursor: -moz-grab;
     cursor: -webkit-grab;
 
+    position: absolute;
+    left: 500px;
+
+    animation: fadeIn 1.5s, slide 0.5s forwards, blur 0.5s;
+    -webkit-animation: fadeIn 1.5s, slide 0.5s forwards, blur 0.5s;
+    -moz-animation: fadeIn 1.5s, slide 0.5s forwards, blur 0.5s;
+    -o-animation: fadeIn 1.5s, slide 0.5s forwards, blur 0.5s;
+    -ms-animation: fadeIn 1.5s, slide 0.5s forwards, blur 0.5s;
+
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+
+    @-webkit-keyframes slide {
+      100% {
+        left: 0;
+      }
+    }
+
+    @keyframes slide {
+      100% {
+        left: 0;
+      }
+    }
+
+    @-webkit-keyframes blur {
+      0% {
+        -webkit-filter: blur(10px);
+      }
+
+      100% {
+        -webkit-filter: blur(0px);
+      }
+    }
+
+    @keyframes blur {
+      0% {
+        -webkit-filter: blur(10px);
+      }
+
+      100% {
+        -webkit-filter: blur(0px);
+      }
+    }
+
     &:active {
       cursor: grabbing;
       cursor: -moz-grabbing;

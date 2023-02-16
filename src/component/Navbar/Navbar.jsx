@@ -129,7 +129,7 @@ const Navbar = ({ lang, setLang }) => {
                     }
                   : () => {
                       setActive(item.id);
-                      window.scrollTo({ top: 80, behavior: "smooth" });
+                      window.scrollTo({ top: 0, behavior: "smooth" });
                     }
               }
             >
@@ -137,7 +137,10 @@ const Navbar = ({ lang, setLang }) => {
             </div>
           ))}
         </div>
-        <div className="right">
+        <div
+          className="right"
+          style={device === "desktop" ? { marginRight: 0 } : {}}
+        >
           <button
             onClick={() => setToggle(!toggle)}
             style={device === "desktop" ? {} : { width: "25vw" }}
@@ -323,7 +326,7 @@ const Navbar = ({ lang, setLang }) => {
                   : open
                   ? {
                       width: "50vw",
-                      height: "80vw",
+                      // height: "80vw",
                       flexDirection: "column",
                       alignItems: "center",
                       position: "absolute",
@@ -360,10 +363,12 @@ const Navbar = ({ lang, setLang }) => {
                             yOffset;
 
                           window.scrollTo({ top: y, behavior: "smooth" });
+                          setOpen(false);
                         }
                       : () => {
                           setActive(item.id);
                           window.scrollTo({ top: 80, behavior: "smooth" });
+                          setOpen(false);
                         }
                   }
                 >

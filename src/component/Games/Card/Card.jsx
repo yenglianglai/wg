@@ -4,15 +4,7 @@ import { useContext } from "react";
 import { RwdContext } from "../../../App";
 
 const Card = ({ imgUrl, iconUrl, name, size, rtp, lang }) => {
-  const [scale, setScale] = useState(true);
   const { device } = useContext(RwdContext);
-  useEffect(() => {
-    setInterval(() => {
-      setScale(false);
-    }, 200);
-
-    return () => clearInterval();
-  }, []);
   return (
     <div
       className="card"

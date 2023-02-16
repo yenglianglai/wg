@@ -1,10 +1,10 @@
 import Card from "../Card/Card";
 import React from "react";
 import { RwdContext } from "../../../App";
-import { useContext } from "react";
+import { useContext, useEffect, useState, useCallback } from "react";
 import "./Container.scss";
 
-const Container = ({ lang }) => {
+const Container = ({ lang, containerRender }) => {
   const data = [
     [
       {
@@ -472,9 +472,15 @@ const Container = ({ lang }) => {
     ],
   ];
   const { activeGame } = useContext(RwdContext);
+  const [, updateState] = useState();
+  const forceUpdate = useCallback(() => updateState({}), []);
+  useEffect(() => {
+    console.log(123);
+    forceUpdate();
+  }, [containerRender]);
 
   return (
-    <div className="container">
+    <div className="container" key={Math.random()}>
       {data[activeGame].map((game, i) => (
         <Card
           imgUrl={game.imgUrl}

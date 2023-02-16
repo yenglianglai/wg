@@ -20,7 +20,7 @@ const images = [
 ];
 
 const Slide_2 = ({ device, hover }) => {
-  const [slide, setSlide] = useState(1);
+  const [slide, setSlide] = useState(3);
   const CustomRightArrow = ({ onClick }) => {
     function handleClick() {
       onClick();
