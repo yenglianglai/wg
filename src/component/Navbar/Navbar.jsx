@@ -3,8 +3,13 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import "./Navbar.scss";
 import { useContext } from "react";
 import { RwdContext } from "../../App";
-const Navbar = ({ lang, setLang, setModalOpen }) => {
-  const [active, setActive] = useState(0);
+const Navbar = ({
+  lang,
+  setLang,
+  setModalOpen,
+  activeSection,
+  setActiveSection,
+}) => {
   const [toggle, setToggle] = useState(false);
   const [open, setOpen] = useState(false);
   const { device } = useContext(RwdContext);
@@ -107,14 +112,14 @@ const Navbar = ({ lang, setLang, setModalOpen }) => {
               className="item"
               key={i}
               style={
-                active === item.id
+                activeSection === item.id
                   ? { color: "white", backgroundColor: "#0D65EA" }
                   : {}
               }
               onClick={
                 item.id !== 1
                   ? () => {
-                      setActive(item.id);
+                      setActiveSection(item.id);
                       const yOffset =
                         document.getElementById("navbar").offsetHeight;
 
@@ -128,7 +133,7 @@ const Navbar = ({ lang, setLang, setModalOpen }) => {
                       window.scrollTo({ top: y, behavior: "smooth" });
                     }
                   : () => {
-                      setActive(item.id);
+                      setActiveSection(item.id);
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }
               }
@@ -348,7 +353,7 @@ const Navbar = ({ lang, setLang, setModalOpen }) => {
                   className="item"
                   key={i}
                   style={
-                    active === item.id
+                    activeSection === item.id
                       ? {
                           color: "white",
                           backgroundColor: "#0D65EA",
@@ -359,7 +364,7 @@ const Navbar = ({ lang, setLang, setModalOpen }) => {
                   onClick={
                     item.id !== 1
                       ? () => {
-                          setActive(item.id);
+                          setActiveSection(item.id);
                           const yOffset =
                             document.getElementById("navbar").offsetHeight;
                           const element = document.getElementById(item.id);
@@ -372,7 +377,7 @@ const Navbar = ({ lang, setLang, setModalOpen }) => {
                           setOpen(false);
                         }
                       : () => {
-                          setActive(item.id);
+                          setActiveSection(item.id);
                           window.scrollTo({ top: 0, behavior: "smooth" });
                           setOpen(false);
                         }

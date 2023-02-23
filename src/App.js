@@ -18,10 +18,12 @@ import Slide_6 from "./component/Show/Slide_6/Slide_6";
 import Slide_7 from "./component/Show/Slide_7/Slide_7";
 import Slide_8 from "./component/Show/Slide_8/Slide_8";
 import Window from "./component/window/Window";
+import { CollectionsOutlined } from "@mui/icons-material";
 
 export const RwdContext = createContext(null);
 
 function App() {
+  const [activeSection, setActiveSection] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
   const [device, setDevice] = useState("desktop");
   const [activeGame, setActiveGame] = useState(0);
@@ -35,48 +37,80 @@ function App() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      const superEle = document.getElementById(2);
       const gameEle = document.getElementById(3);
       const paymentEle = document.getElementById(4);
       const businessEle = document.getElementById(5);
       const PlatformEle = document.getElementById(6);
       const OfficialEle = document.getElementById(7);
+      const yOffset = document.getElementById("navbar").offsetHeight;
+
+      const superOffset = superEle.offsetTop;
       const gameOffset = gameEle.offsetTop;
-      const paymentOffset = paymentEle.offsetTop;
-      const businessOffset = businessEle.offsetTop;
-      const PlatformOffset = PlatformEle.offsetTop;
-      const officialOffset = OfficialEle.offsetTop;
+      const paymentOffset = paymentEle.offsetTop + yOffset;
+      const businessOffset =
+        yOffset +
+        superEle.offsetTop +
+        businessEle.offsetTop +
+        businessEle.clientHeight +
+        paymentEle.clientHeight;
+      const PlatformOffset =
+        yOffset +
+        superEle.clientHeight +
+        PlatformEle.offsetTop +
+        PlatformEle.clientHeight +
+        businessEle.clientHeight +
+        paymentEle.clientHeight;
+
       window.addEventListener("scroll", () => {
+        if (window.pageYOffset < superOffset) {
+          setActiveSection(1);
+        }
+
+        if (
+          window.pageYOffset > superOffset &&
+          window.pageYOffset < gameOffset
+        ) {
+          setActiveSection(2);
+        }
+
         if (
           window.pageYOffset > gameOffset &&
           window.pageYOffset < paymentOffset
         ) {
           setContainerRender(true);
+          setActiveSection(3);
         } else {
           setContainerRender(false);
         }
-        if (
-          window.pageYOffset > paymentOffset &&
-          window.pageYOffset < businessOffset
-        ) {
+        if (window.pageYOffset > paymentOffset) {
           setPaymentRender(true);
+          setActiveSection(4);
         } else {
           setPaymentRender(false);
         }
 
-        if (
-          window.pageYOffset > businessOffset &&
-          window.pageYOffset < PlatformOffset
-        ) {
+        if (window.pageYOffset > businessOffset) {
           setBusinessRender(true);
+          setActiveSection(5);
         } else {
           setBusinessRender(false);
         }
-        if (window.pageYOffset > officialOffset) {
+
+        if (window.pageYOffset > PlatformOffset) {
           setPlatformRender(true);
           setOfficialRender(true);
+          setActiveSection(6);
         } else {
           setPlatformRender(false);
           setOfficialRender(false);
+        }
+
+        if (
+          window.pageYOffset + window.innerHeight - yOffset >
+          document.body.scrollHeight
+        ) {
+          setActiveSection(7);
         }
       });
     }
@@ -127,8 +161,14 @@ function App() {
               : {}
           }
         >
-          <Navbar setLang={setLang} lang={lang} setModalOpen={setModalOpen} />
-          <Banner lang={lang} />
+          <Navbar
+            setLang={setLang}
+            lang={lang}
+            setModalOpen={setModalOpen}
+            activeSection={activeSection}
+            setActiveSection={setActiveSection}
+          />
+          <Banner lang={lang} id={1} />
 
           {device === "desktop" ? (
             <Wrapper
@@ -171,7 +211,6 @@ function App() {
                       ? "立即体验"
                       : lang === "eng" && "Visit demo site",
                 }}
-                id={2}
                 lang={lang}
               />,
               <div className="slideContainer" style={{ height: "70vw" }}>
