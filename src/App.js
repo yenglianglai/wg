@@ -4,7 +4,7 @@ import Navbar from "./component/Navbar/Navbar";
 import Wrapper from "./component/Wrapper/Wrapper";
 import Screen from "./component/Screen/Screen";
 import Payment from "./component/Payment/Payment";
-import { createContext, useEffect, useState, useRef } from "react";
+import { createContext, useEffect, useState } from "react";
 import Container from "./component/Games/Container/Container";
 import Business from "./component/Business/Business";
 import Platform from "./component/Platform/Platform";
@@ -18,7 +18,6 @@ import Slide_6 from "./component/Show/Slide_6/Slide_6";
 import Slide_7 from "./component/Show/Slide_7/Slide_7";
 import Slide_8 from "./component/Show/Slide_8/Slide_8";
 import Window from "./component/window/Window";
-import { CollectionsOutlined } from "@mui/icons-material";
 
 export const RwdContext = createContext(null);
 
