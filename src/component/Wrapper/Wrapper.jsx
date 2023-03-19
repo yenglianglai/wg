@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 import { useContext } from "react";
 import { RwdContext } from "../../App";
 
-const Wrapper = ({ title, subTitle, id, content, lang }) => {
+const Wrapper = ({ title, subTitle, id, content, lang, url }) => {
   const { device } = useContext(RwdContext);
   return (
     <div className="wrapper" id={id}>
@@ -25,11 +25,16 @@ const Wrapper = ({ title, subTitle, id, content, lang }) => {
             <Header lang={lang} />
           ) : (
             <div className="function">
-              <p
+              <a
+                href={url} 
+                target="_blank"
                 style={
                   device === "desktop"
                     ? subTitle?.type === "link"
-                      ? { color: "#0b64ea" }
+                      ? { 
+                        color: "#0b64ea",
+                        fontSize: "2vw",
+                      }
                       : {
                           color: "#9A9B9D",
                           "&:hover": "none",
@@ -47,7 +52,7 @@ const Wrapper = ({ title, subTitle, id, content, lang }) => {
                 }
               >
                 {subTitle?.text}
-              </p>
+              </a>
               {subTitle?.type === "link" && (
                 <KeyboardArrowRightIcon
                   color="info"
@@ -58,21 +63,7 @@ const Wrapper = ({ title, subTitle, id, content, lang }) => {
             </div>
           )}
         </div>
-        <div className="right">
-          {subTitle?.type === "link" && (
-            <img
-              src={
-                lang === "zh-TW"
-                  ? "/img/discount.png"
-                  : lang === "zh-CN"
-                  ? "/img/discount_sim.png"
-                  : "/img/discount_eng.png"
-              }
-              alt=""
-              style={device === "desktop" ? {} : { width: "30vw" }}
-            />
-          )}
-        </div>
+        
       </div>
       <div className="bottom">{content && content}</div>
     </div>

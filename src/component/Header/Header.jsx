@@ -101,6 +101,27 @@ const Header = ({ lang }) => {
           ? "捕鱼"
           : lang === "eng" && "Fishing"}
       </h2>
+      <h2
+        onClick={() => {
+          setActiveGame(4);
+        }}
+        style={
+          activeGame === 4
+            ? {
+                color: "#3764EA",
+                borderBottom: "3px solid #3764EA",
+                paddingBottom: "3px",
+                borderRadius: "2px",
+              }
+            : {}
+        }
+      >
+        {lang === "zh-TW"
+          ? "真人"
+          : lang === "zh-CN"
+          ? "真人"
+          : lang === "eng" && "Live"}
+      </h2>
     </div>
   );
 };

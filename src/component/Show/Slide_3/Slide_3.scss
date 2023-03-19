@@ -1,124 +1,149 @@
-.container {
-  width: 100vw;
+.slide_3 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   height: 100%;
-  overflow: hidden;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  box-sizing: border-box;
 
-  .carousel {
-    transition: all 0.5s ease-in-out;
-    display: flex;
-    gap: 2vw;
-    width: fit-content;
-    padding: 0 2vw;
+  .container-3 {
+    width: 100%;
     height: 100%;
-    background-image: url(/img/slide_3_bg.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    border-radius: 10px;
-    // border: red solid 2px;
-    cursor: move; /* fallback if grab cursor is unsupported */
-    cursor: grab;
-    cursor: -moz-grab;
-    cursor: -webkit-grab;
+    overflow: hidden;
+    position: relative;
 
-    position: absolute;
-    left: 500px;
-
-    animation: fadeIn 1.5s, slide 0.5s forwards, blur 0.5s;
-    -webkit-animation: fadeIn 1.5s, slide 0.5s forwards, blur 0.5s;
-    -moz-animation: fadeIn 1.5s, slide 0.5s forwards, blur 0.5s;
-    -o-animation: fadeIn 1.5s, slide 0.5s forwards, blur 0.5s;
-    -ms-animation: fadeIn 1.5s, slide 0.5s forwards, blur 0.5s;
-
-    -webkit-animation-delay: 0.5s;
-    animation-delay: 0.5s;
-
-    @-webkit-keyframes slide {
-      100% {
-        left: 0;
-      }
-    }
-
-    @keyframes slide {
-      100% {
-        left: 0;
-      }
-    }
-
-    @-webkit-keyframes blur {
-      0% {
-        -webkit-filter: blur(10px);
-      }
-
-      100% {
-        -webkit-filter: blur(0px);
-      }
-    }
-
-    @keyframes blur {
-      0% {
-        -webkit-filter: blur(10px);
-      }
-
-      100% {
-        -webkit-filter: blur(0px);
-      }
-    }
-
-    &:active {
-      cursor: grabbing;
-      cursor: -moz-grabbing;
-      cursor: -webkit-grabbing;
-    }
-
-    .carousel-item {
+    .carousel-3 {
+      transition: all 0.5s ease-in-out;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      gap: 2vw;
+      width: fit-content;
+      height: 100%;
+      background-image: url(/img/slide_3_bg.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      border-radius: 10px;
       // border: red solid 2px;
-      padding-right: 2vw;
+      cursor: move; /* fallback if grab cursor is unsupported */
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+      left: 50vw;
+      padding: 0 2vw;
+      position: absolute;
 
-      img {
-        width: 170px;
-        object-fit: cover;
-        transition: all 0.5s ease-in-out;
-        cursor: pointer;
+      animation: slide 0.5s forwards, blur 1s;
+      -webkit-animation: slide 0.5s forwards, blur 1s;
+      -moz-animation: slide 0.5s forwards, blur 1s;
+      -o-animation: slide 0.5s forwards, blur 1s;
+      -ms-animation: slide 0.5s forwards, blur 1s;
 
-        &:hover {
-          transform: scale(1.08);
+      @-webkit-keyframes slide {
+        100% {
+          left: -5vw;
+        }
+      }
+
+      @keyframes slide {
+        100% {
+          left: -5vw;
+        }
+      }
+      @-webkit-keyframes blur {
+        0% {
+          -webkit-filter: blur(10px);
+        }
+
+        100% {
+          -webkit-filter: blur(0px);
+        }
+      }
+
+      @keyframes blur {
+        0% {
+          -webkit-filter: blur(10px);
+        }
+
+        100% {
+          -webkit-filter: blur(0px);
+        }
+      }
+
+      &:active {
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+      }
+
+      .carousel-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // border: red solid 2px;
+        // padding-right: 2vw;
+
+        img {
+          object-fit: cover;
+          transition: all 0.5s ease-in-out;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.08);
+          }
         }
       }
     }
-  }
-  .react-multiple-carousel__arrow {
-    background-color: transparent;
-    border: #0d65ea solid 2px;
-    width: 50px;
-    height: 50px;
-    color: #0d65ea;
-  }
+    .react-multiple-carousel__arrow {
+      background-color: transparent;
+      border: #0d65ea solid 2px;
+      width: 50px;
+      height: 50px;
+      color: #0d65ea;
+    }
 
-  .react-multiple-carousel__arrow::before {
-    color: #0d65ea;
-    cursor: pointer;
-  }
+    .react-multiple-carousel__arrow::before {
+      color: #0d65ea;
+      cursor: pointer;
+    }
 
-  .react-multiple-carousel__arrow--right {
-    position: absolute;
-    right: 30px;
-    top: 40%;
-    transition: all 0.8s ease-in-out;
-    &:hover {
-      transform: translateX(10px);
+    .react-multiple-carousel__arrow--right {
+      position: absolute;
+      right: 30px;
+      top: 40%;
+      transition: all 0.8s ease-in-out;
+      &:hover {
+        transform: translateX(10px);
+      }
+    }
+    .react-multiple-carousel__arrow--left {
+      transition: all 0.8s ease-in-out;
+      position: absolute;
+      left: 30px;
+      top: 40%;
+      &:hover {
+        transform: translateX(-10px);
+      }
     }
   }
-  .react-multiple-carousel__arrow--left {
-    transition: all 0.8s ease-in-out;
+
+  .progress {
+    width: 45vw;
+    height: 10vw;
+    // border: red solid 2px;
     position: absolute;
-    left: 30px;
-    top: 40%;
-    &:hover {
-      transform: translateX(-10px);
+    bottom: 20px;
+    left: auto;
+    right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .dot {
+      width: 1.5vw;
+      height: 1.5vw;
+      background-color: #c4c4c4;
+      border-radius: 50%;
     }
   }
 }

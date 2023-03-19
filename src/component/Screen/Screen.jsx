@@ -38,32 +38,14 @@ const Screen = ({ lang }) => {
           : lang === "eng" && "2K HD quality native games stable and smooth",
     },
     {
-      id: 2,
-      text:
-        lang === "zh-TW"
-          ? "活動任務全自動 網游式一鍵領取"
-          : lang === "zh-CN"
-          ? "活动任务全自动 网游式一键领取"
-          : lang === "eng" && "Automation event and mission just in one-click",
-    },
-    {
       id: 3,
       text:
         lang === "zh-TW"
-          ? "支持20多種語言 覆蓋全球95%人群"
+          ? "支持9多種語言 覆蓋全球95%人群"
           : lang === "zh-CN"
-          ? "支持20多种语言 覆盖全球95%人群"
+          ? "支持9多种语言 覆盖全球95%人群"
           : lang === "eng" &&
-            "Support more than 20 languages, covering 95% of the world's population",
-    },
-    {
-      id: 4,
-      text:
-        lang === "zh-TW"
-          ? "收費低廉合理 服務真誠用心"
-          : lang === "zh-CN"
-          ? "收费低廉合理 服务真诚用心"
-          : lang === "eng" && "Transparent and reasonable pricing",
+            "Support more than 9 languages, covering 95% of the world's population",
     },
     {
       id: 5,
@@ -74,15 +56,6 @@ const Screen = ({ lang }) => {
           ? "对赌互刷监测 出款自动校验"
           : lang === "eng" &&
             "Gaming monitoring automatic payment verification",
-    },
-    {
-      id: 6,
-      text:
-        lang === "zh-TW"
-          ? "房間局自動引流 俱樂部直接躺賺"
-          : lang === "zh-CN"
-          ? "房间局自动引流 俱乐部直接躺赚"
-          : lang === "eng" && "Friend invite room and Clubhouse mode",
     },
     {
       id: 7,
@@ -97,12 +70,12 @@ const Screen = ({ lang }) => {
 
   const show = [
     <Slide_1 device={device} hover={hover} lang={lang} />,
-    <Slide_2 device={device} hover={hover} />,
-    <Slide_3 device={device} hover={hover} />,
+    <Slide_2 device={device} hover={hover} lang={lang} />,
+    <Slide_3 device={device} hover={hover} lang={lang} />,
     <Slide_4 device={device} hover={hover} lang={lang} />,
     <Slide_5 device={device} hover={hover} lang={lang} />,
     <Slide_6 device={device} hover={hover} lang={lang} />,
-    <Slide_7 device={device} hover={hover} />,
+    <Slide_7 device={device} hover={hover} lang={lang} />,
     <Slide_8 device={device} hover={hover} lang={lang} />,
   ];
 

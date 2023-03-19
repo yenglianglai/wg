@@ -2,20 +2,44 @@ import { useState } from "react";
 import "react-multi-carousel/lib/styles.css";
 import "./Slide_7.scss";
 
-const images = [
-  "/img/slide_7_1.png",
-  "/img/slide_7_2.png",
-  "/img/slide_7_3.png",
-  "/img/slide_7_4.png",
-  "/img/slide_7_5.png",
-  "/img/slide_7_6.png",
-  "/img/slide_7_7.png",
-  "/img/slide_7_8.png",
-  "/img/slide_7_9.png",
-];
-
-const Slide_7 = ({ device, hover }) => {
-  const [slide, setSlide] = useState(3);
+const Slide_7 = ({ device, hover, lang }) => {
+  const images =
+    lang === "zh-TW"
+      ? [
+          "/img/slide_7_1.png",
+          "/img/slide_7_2.png",
+          "/img/slide_7_3.png",
+          "/img/slide_7_4.png",
+          "/img/slide_7_5.png",
+          "/img/slide_7_6.png",
+          "/img/slide_7_7.png",
+          "/img/slide_7_8.png",
+          "/img/slide_7_9.png",
+        ]
+      : lang === "eng"
+      ? [
+          "/img/slide_7_1_en.png",
+          "/img/slide_7_2_en.png",
+          "/img/slide_7_3_en.png",
+          "/img/slide_7_4_en.png",
+          "/img/slide_7_5_en.png",
+          "/img/slide_7_6_en.png",
+          "/img/slide_7_7_en.png",
+          "/img/slide_7_8_en.png",
+          "/img/slide_7_9_en.png",
+        ]
+      : [
+          "/img/slide_7_1_sim.png",
+          "/img/slide_7_2_sim.png",
+          "/img/slide_7_3_sim.png",
+          "/img/slide_7_4_sim.png",
+          "/img/slide_7_5_sim.png",
+          "/img/slide_7_6_sim.png",
+          "/img/slide_7_7_sim.png",
+          "/img/slide_7_8_sim.png",
+          "/img/slide_7_9_sim.png",
+        ];
+  const [slide, setSlide] = useState(0);
   console.log(slide);
   const CustomRightArrow = ({ onClick }) => {
     function handleClick() {
@@ -64,11 +88,11 @@ const Slide_7 = ({ device, hover }) => {
   };
 
   return (
-    <div className="container">
+    <div className="container-7">
       <CustomLeftArrow
         className="react-multiple-carousel__arrow react-multiple-carousel__arrow--left"
         onClick={
-          slide === 3
+          slide === 0
             ? () => {}
             : () => {
                 setSlide((slide) => slide - 1);
@@ -76,16 +100,16 @@ const Slide_7 = ({ device, hover }) => {
         }
       />
       <div
-        className="carousel"
+        className="carousel-7"
         style={
           device === "desktop"
-            ? { transform: `translateX(-${slide * 170}px)` }
+            ? { transform: `translateX(-${slide * 13}vw)` }
             : {
-                transform: `translateX(-${slide * 82}vw)`,
+                transform: `translateX(-${slide * 74}vw)`,
                 fontSize: "3vw",
                 background: "none",
-                gap: "10vw",
-                padding: "0 40vw",
+                gap: "4vw",
+                padding: "0 20vw",
               }
         }
       >
@@ -108,7 +132,13 @@ const Slide_7 = ({ device, hover }) => {
       <CustomRightArrow
         className="react-multiple-carousel__arrow--right"
         onClick={
-          slide === images.length - 5
+          device === "desktop"
+            ? slide === images.length - 5
+              ? () => {}
+              : () => {
+                  setSlide((slide) => slide + 1);
+                }
+            : slide === images.length - 1
             ? () => {}
             : () => {
                 setSlide((slide) => slide + 1);

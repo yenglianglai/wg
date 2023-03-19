@@ -1,9 +1,32 @@
+@media only screen and (max-width: 1260px) {
+  .slide_4 {
+    .table {
+      font-size: 2vw;
+      thead {
+        height: 10vw;
+        font-size: 2.5vw;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1260px) {
+  .slide_4 {
+    .table {
+      font-size: 1vw;
+      thead {
+        height: 50px;
+      }
+    }
+  }
+}
+
 .slide_4 {
   position: relative;
   width: 99%;
   height: 99%;
   border-radius: 10px;
   // border: #dadada solid 1px;
+  overflow-x: hidden;
   overflow-y: auto;
   padding-right: 5px;
   table,
@@ -80,8 +103,8 @@
   .table {
     position: sticky;
     top: 0;
-    width: 100%;
-    font-size: 1vw;
+    width: 99%;
+    // font-size: 1vw;
     color: #333333;
     // border: red solid 2px;
     border-radius: 10px;
@@ -124,10 +147,9 @@
       margin: 0;
       width: 100%;
       background: #f2f6fa;
-      height: 50px;
 
       th {
-        min-width: 150px;
+        // min-width: 150px;
         font-weight: 400;
       }
     }

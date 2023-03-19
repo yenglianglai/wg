@@ -4,7 +4,7 @@ import Navbar from "./component/Navbar/Navbar";
 import Wrapper from "./component/Wrapper/Wrapper";
 import Screen from "./component/Screen/Screen";
 import Payment from "./component/Payment/Payment";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useRef } from "react";
 import Container from "./component/Games/Container/Container";
 import Business from "./component/Business/Business";
 import Platform from "./component/Platform/Platform";
@@ -18,6 +18,7 @@ import Slide_6 from "./component/Show/Slide_6/Slide_6";
 import Slide_7 from "./component/Show/Slide_7/Slide_7";
 import Slide_8 from "./component/Show/Slide_8/Slide_8";
 import Window from "./component/window/Window";
+import { CollectionsOutlined } from "@mui/icons-material";
 
 export const RwdContext = createContext(null);
 
@@ -39,28 +40,22 @@ function App() {
       const superEle = document.getElementById(2);
       const gameEle = document.getElementById(3);
       const paymentEle = document.getElementById(4);
-      const businessEle = document.getElementById(5);
+      // const businessEle = document.getElementById(5);
       const PlatformEle = document.getElementById(6);
       const OfficialEle = document.getElementById(7);
       const yOffset = document.getElementById("navbar").offsetHeight;
 
       const superOffset = superEle.offsetTop;
       const gameOffset = gameEle.offsetTop;
-      const paymentOffset = paymentEle.offsetTop + yOffset;
-      const businessOffset =
-        yOffset +
-        superEle.offsetTop +
-        businessEle.offsetTop +
-        businessEle.clientHeight +
-        paymentEle.clientHeight;
+      // const paymentOffset = paymentEle.offsetTop + yOffset;
+      // const businessOffset = businessEle.offsetTop;
       const PlatformOffset =
         yOffset +
         superEle.clientHeight +
         PlatformEle.offsetTop +
-        PlatformEle.clientHeight +
-        businessEle.clientHeight +
-        paymentEle.clientHeight;
-
+        PlatformEle.clientHeight;
+      //paymentEle.clientHeight;
+      const officialOffset = OfficialEle.offsetTop;
       window.addEventListener("scroll", () => {
         if (window.pageYOffset < superOffset) {
           setActiveSection(1);
@@ -72,39 +67,45 @@ function App() {
         ) {
           setActiveSection(2);
         }
+        //if (
+        //  window.pageYOffset > gameOffset &&
+        //  window.pageYOffset < paymentOffset
+        //) {
+        //  setContainerRender(true);
+        //  setActiveSection(3);
+        //} else {
+        //  setContainerRender(false);
+        //}
+        //if (window.pageYOffset > paymentOffset) {
+        //  setPaymentRender(true);
+        //  setActiveSection(4);
+        //} else {
+        //  setPaymentRender(false);
+        //}
+        // if (
+        //   window.pageYOffset > paymentOffset &&
+        //   window.pageYOffset < businessOffset
+        // ) {
+        //   setPaymentRender(true);
+        // } else {
+        //   setPaymentRender(false);
+        // }
 
-        if (
-          window.pageYOffset > gameOffset &&
-          window.pageYOffset < paymentOffset
-        ) {
-          setContainerRender(true);
-          setActiveSection(3);
-        } else {
-          setContainerRender(false);
-        }
-        if (window.pageYOffset > paymentOffset) {
-          setPaymentRender(true);
-          setActiveSection(4);
-        } else {
-          setPaymentRender(false);
-        }
-
-        if (window.pageYOffset > businessOffset) {
-          setBusinessRender(true);
-          setActiveSection(5);
-        } else {
-          setBusinessRender(false);
-        }
-
-        if (window.pageYOffset > PlatformOffset) {
+        // if (
+        //   window.pageYOffset > businessOffset &&
+        //   window.pageYOffset < PlatformOffset
+        // ) {
+        //   setBusinessRender(true);
+        // } else {
+        //   setBusinessRender(false);
+        // }
+        if (window.pageYOffset > officialOffset) {
           setPlatformRender(true);
           setOfficialRender(true);
-          setActiveSection(6);
         } else {
           setPlatformRender(false);
           setOfficialRender(false);
         }
-
         if (
           window.pageYOffset + window.innerHeight - yOffset >
           document.body.scrollHeight
@@ -182,14 +183,15 @@ function App() {
                 type: "link",
                 text:
                   lang === "zh-TW"
-                    ? "立即體驗"
+                    ? "演示站點"
                     : lang === "zh-CN"
-                    ? "立即体验"
+                    ? "演示站点"
                     : lang === "eng" && "Visit demo site",
               }}
               id={2}
               content={<Screen lang={lang} />}
               lang={lang}
+              url={"https://x53.basspay1.com/#/tabs/home"}
             />
           ) : (
             [
@@ -205,12 +207,14 @@ function App() {
                   type: "link",
                   text:
                     lang === "zh-TW"
-                      ? "立即體驗"
+                      ? "演示站点"
                       : lang === "zh-CN"
-                      ? "立即体验"
+                      ? "演示站点"
                       : lang === "eng" && "Visit demo site",
                 }}
+                id={2}
                 lang={lang}
+                url={"https://x53.basspay1.com/#/tabs/home"}
               />,
               <div className="slideContainer" style={{ height: "70vw" }}>
                 <h1 className="title">
@@ -236,39 +240,18 @@ function App() {
                     : lang === "eng" &&
                       "2K HD quality native games stable and smooth"}
                 </h1>
-                <Slide_2 device={device} />
-              </div>,
-              <div className="slideContainer" style={{ height: "180vw" }}>
-                <h1 className="title">
-                  {lang === "zh-TW"
-                    ? "活動任務全自動 網游式一鍵領取"
-                    : lang === "zh-CN"
-                    ? "活动任务全自动 网游式一键领取"
-                    : lang === "eng" &&
-                      "Automation event and mission just in one-click"}
-                </h1>
-                <Slide_3 device={device} />
+                <Slide_2 device={device} lang={lang} />
               </div>,
               <div className="slideContainer">
                 <h1 className="title">
                   {lang === "zh-TW"
-                    ? "支持20多種語言 覆蓋全球95%人群"
+                    ? "支持9多種語言 覆蓋全球95%人群"
                     : lang === "zh-CN"
-                    ? "支持20多种语言 覆盖全球95%人群"
+                    ? "支持9多种语言 覆盖全球95%人群"
                     : lang === "eng" &&
-                      "Support more than 20 languages, covering 95% of the world's population"}
+                      "Support more than 9 languages, covering 95% of the world's population"}
                 </h1>
                 <Slide_4 device={device} lang={lang} />
-              </div>,
-              <div className="slideContainer">
-                <h1 className="title">
-                  {lang === "zh-TW"
-                    ? "收費低廉合理 服務真誠用心"
-                    : lang === "zh-CN"
-                    ? "收费低廉合理 服务真诚用心"
-                    : lang === "eng" && "Transparent and reasonable pricing"}
-                </h1>
-                <Slide_5 device={device} />
               </div>,
               <div className="slideContainer" style={{ height: "85vw" }}>
                 <h1 className="title">
@@ -280,16 +263,6 @@ function App() {
                       "Gaming monitoring automatic payment verification"}
                 </h1>
                 <Slide_6 device={device} lang={lang} />
-              </div>,
-              <div className="slideContainer" style={{ height: "180vw" }}>
-                <h1 className="title">
-                  {lang === "zh-TW"
-                    ? "房間局自動引流 俱樂部直接躺賺"
-                    : lang === "zh-CN"
-                    ? "房间局自动引流 俱乐部直接躺赚"
-                    : lang === "eng" && "Friend invite room and Clubhouse mode"}
-                </h1>
-                <Slide_7 device={device} />
               </div>,
               <div
                 className="slideContainer"
@@ -332,38 +305,13 @@ function App() {
             }
             subTitle={{
               type: "link",
-              text:
-                lang === "zh-TW"
-                  ? "聯繫商務"
-                  : lang === "zh-CN"
-                  ? "联系商务"
-                  : lang === "eng" && "Contact WG",
+              text: lang === "zh-TW" ? "" : lang === "zh-CN" ? "" : lang === "",
             }}
             id={4}
             content={<Payment lang={lang} paymentRender={paymentRender} />}
             lang={lang}
           />
-          <Wrapper
-            title={
-              lang === "zh-TW"
-                ? "超級引流"
-                : lang === "zh-CN"
-                ? "超级引流"
-                : lang === "eng" && "Super Promotion System"
-            }
-            subTitle={{
-              type: "link",
-              text:
-                lang === "zh-TW"
-                  ? "聯繫商務"
-                  : lang === "zh-CN"
-                  ? "联系商务"
-                  : lang === "eng" && "Contact WG",
-            }}
-            id={5}
-            content={<Business lang={lang} businessRender={businessRender} />}
-            lang={lang}
-          />
+
           <Wrapper
             title={
               lang === "zh-TW"
@@ -408,7 +356,10 @@ function App() {
             lang={lang}
           />
         </div>
-        <div className="footer">
+        <div
+          className="footer"
+          style={device === "desktop" ? {} : { fontSize: "2.8vw" }}
+        >
           Copyright © 2023 Win Gaming All Rights Reserved
         </div>
       </div>

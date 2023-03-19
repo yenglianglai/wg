@@ -3,13 +3,8 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import "./Navbar.scss";
 import { useContext } from "react";
 import { RwdContext } from "../../App";
-const Navbar = ({
-  lang,
-  setLang,
-  setModalOpen,
-  activeSection,
-  setActiveSection,
-}) => {
+const Navbar = ({ lang, setLang, setModalOpen }) => {
+  const [active, setActive] = useState(0);
   const [toggle, setToggle] = useState(false);
   const [open, setOpen] = useState(false);
   const { device } = useContext(RwdContext);
@@ -50,15 +45,6 @@ const Navbar = ({
           : lang === "zh-CN"
           ? "支付内循环"
           : lang === "eng" && "Pay system Inner Loop",
-    },
-    {
-      id: 5,
-      title:
-        lang === "zh-TW"
-          ? "超級引流"
-          : lang === "zh-CN"
-          ? "超级引流"
-          : lang === "eng" && "Super Promotion System",
     },
     {
       id: 6,
@@ -112,14 +98,14 @@ const Navbar = ({
               className="item"
               key={i}
               style={
-                activeSection === item.id
+                active === item.id
                   ? { color: "white", backgroundColor: "#0D65EA" }
                   : {}
               }
               onClick={
                 item.id !== 1
                   ? () => {
-                      setActiveSection(item.id);
+                      setActive(item.id);
                       const yOffset =
                         document.getElementById("navbar").offsetHeight;
 
@@ -133,7 +119,7 @@ const Navbar = ({
                       window.scrollTo({ top: y, behavior: "smooth" });
                     }
                   : () => {
-                      setActiveSection(item.id);
+                      setActive(item.id);
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }
               }
@@ -353,7 +339,7 @@ const Navbar = ({
                   className="item"
                   key={i}
                   style={
-                    activeSection === item.id
+                    active === item.id
                       ? {
                           color: "white",
                           backgroundColor: "#0D65EA",
@@ -364,7 +350,7 @@ const Navbar = ({
                   onClick={
                     item.id !== 1
                       ? () => {
-                          setActiveSection(item.id);
+                          setActive(item.id);
                           const yOffset =
                             document.getElementById("navbar").offsetHeight;
                           const element = document.getElementById(item.id);
@@ -377,7 +363,7 @@ const Navbar = ({
                           setOpen(false);
                         }
                       : () => {
-                          setActiveSection(item.id);
+                          setActive(item.id);
                           window.scrollTo({ top: 0, behavior: "smooth" });
                           setOpen(false);
                         }
